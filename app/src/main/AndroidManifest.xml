@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:dist="http://schemas.android.com/apk/distribution"
+          xmlns:tools="http://schemas.android.com/tools"
           package="spm.androidworld.all">
 
     <dist:module dist:instant="true"/>
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission
+            android:name="android.permission.USE_BIOMETRIC"/>
+
+
     <application
             android:allowBackup="true"
+            android:debuggable="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+            android:theme="@style/AppTheme"
+            tools:ignore="HardcodedDebugMode"
+            tools:replace="android:debuggable">
+        <activity android:name=".security.biometricAuth.BiometricAuthActivity">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".security.encriptedSharedPreference.EncriptedSharedPrefActivity">
+        </activity>
+        <activity android:name=".activitylifecycle.LifecycleActivity">
+
+        </activity>
+        <activity android:name=".launchmode.LuncherActivityB">
+        </activity>
+        <activity android:name=".launchmode.LuncherActivityA">
+        </activity>
+        <activity android:name=".testing.TestingActivity">
+        </activity>
+        <activity android:name=".security.SecurityActivity">
+        </activity>
+        <activity android:name=".MainActivity">
         </activity>
     </application>
 

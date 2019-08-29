@@ -1,0 +1,9 @@
+
+Android Configure Build
+https://developer.android.com/studio/build/index.html
+
+Gradle Setup Tips
+https://developer.android.com/studio/build/gradle-tips
+
+Configure build variants
+https://developer.android.com/studio/build/build-variants.html#build-types
