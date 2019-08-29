@@ -1,5 +1,6 @@
 # ANDROID SECURITY  
-
+https://proandroiddev.com/secure-data-in-android-encryption-in-android-part-1-e5fd150e316f  
+  
 For Secure application's, Its very important to save the sensitive data with high security so that the middle man cant be hack or leak your sensitive data which leads to huge loss.  
   
 TO overcome this isues, we need to follow the following steps   
