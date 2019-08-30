@@ -7,6 +7,8 @@
 ## SOLID Principle  
 For More details please visit the site  
 https://android.jlelse.eu/basic-concepts-of-software-architecture-patterns-in-android-c76e53f46cba  
+https://android.jlelse.eu/solid-principles-the-definitive-guide-75e30a284dea  
+
   
 ***SOLID*** Represents five important principles which help to write better code, code modularity, better maintainablilty, easy to understand.Understanding and applying these principles will allow you to write better quality code and therefore be a better developer.  
   
@@ -103,8 +105,23 @@ We have a rectangle class
         // getter and setter methods...
         }
         
+        public class ShapeDrawer{
+        public void drawShare(Object shape){
         
-
+        if(shape instanceof Rectangle){
+        //Draw rectAngle
+        }
+        else if(shape instanceof Square){
+        //Draw Square
+        }
+        }
+        }```  
+        
+To implement the **Open Closed Principle (OCP)** principle, you have to write like below.   
+Just create an abstract class with abstract method draw(). which you need to extend to your specified class (Rectangle and square). Inside the overrided **draw()** method you can write your specific code related to square and rectAngle.  
+  
+Otherwise you can create interface containing draw method which implement to both of your classes  
+    
 ### Liskove Substitution Principle  
   
 Derived classes must be substitutable for their base classes.
@@ -113,17 +130,140 @@ for each object o1 of type S there is an object o2 of type T such that for all
 programs P defined in terms of T, the behavior of P is unchanged when o1 is
 substituted for o2 then S is a subtype of T.  
   
+***Object in a program should be replaceable with instances of their subtype without altering the correctness of that program.***  
+  
+          ```  
+         public class Rectangle {
+
+                private int width;
+                private int height;
+                // getter and setter methods...
+                
+                public int getArea(){
+                  return width*height;
+                }
+              }  
+
+              public class Square {
+               private int side;
+              // getter and setter methods...
+              public int getArea(){
+                  return side*side;
+                }
+              }```  
+               
+                
+To implement **Liskove Substitution Principle** you need to create an interface which sould contain **getArea()** method when you can write your own implementations for different shape like **rectAngle and Square**  
+  
+  
+  
+  
+  
 ### I — Interface Segregation Principle  
   
+**Many client-specific interfaces are better than one general purpose interface. You can create individual interfaces spceific to task and keep it simple**    
+    
 Make fine grained interfaces that are client specific.  
 Clients should not be forced to implement interfaces they do not use.  
   
 ### D — Dependency Inversion Principle  
   
+**High-level modules should not depend on low-level modules.Both should depend on abstractions.Abstractions should not depend on details.Details should depend on abdtractions.  
+  
 Depend on abstractions, not on concretions.  
 A. High level modules should not depend upon low level modules. Both should depend upon abstractions.  
 B. Abstractions should not depend upon details. Details should depend upon abstractions.  
-Robert C. Martin
+  
+# CLEAN ARCHITECTURE  
+  
+https://medium.com/@dmilicic/a-detailed-guide-on-developing-android-apps-using-the-clean-architecture-pattern-d38d71e94029  
+  
+Clean Architecture, as mentioned in the provided articles, makes your code:  
+     
+**Independent of Frameworks  
+Testable.  
+Independent of UI.  
+Independent of Database.  
+Independent of any external agency.**  
+  
+***What this means for Android***    
+Generally, your app can have an arbitrary amount of layers but unless you have Enterprise wide business logic that you have to apply in every Android app, you will most often have 3 layers:  
+  
+**Outer:** Implementation layer - Database,UI, external Interfaces,Device  
+**Middle:** Interface adapter layer - Presenter, Controller, Gateways  
+**Inner:** Business logic layer - Entity  
+  
+#### Structure  
+  
+The general structure for an Android app looks like this:  
 
+***Outer layer packages:*** UI, Storage, Network, etc.  
+***Middle layer packages:*** Presenters, Converters  
+***Inner layer packages:*** Interactors, Models, Repositories, Executor  
+  
+**Outer layer**  
+  
+As already mentioned, this is where the framework details go.  
+  
+**UI —** This is where you put all your Activities, Fragments, Adapters and other Android code related to the user interface.
+  
+**Storage —** Database specific code that implements the interface our Interactors use for accessing data and storing data.  
+This includes, for example, ContentProviders or ORM-s such as DBFlow.  
+  
+**Network —** Things like Retrofit go here.  
+  
+**Middle layer**  
+  
+Glue code layer which connects the implementation details with your business logic.
+**Presenters —** Presenters handle events from the UI (e.g. user click) and usually serve as callbacks from inner layers (Interactors).  
+**Converters —** Converter objects are responsible for converting inner models to outer models and vice versa.  
+
+**Inner layer**  
+  
+The core layer contains the most high-level code. All classes here are POJOs. Classes and objects in this layer have no knowledge that they are run in an Android app and can easily be ported to any machine running JVM.  
+
+**Interactors —** These are the classes which actually contain your business logic code. These are run in the background and communicate events to the upper layer using callbacks. They are also called UseCases in some projects (probably a better name). It is normal to have a lot of small Interactor classes in your projects that solve specific problems. This conforms to the Single Responsibility Principle and in my opinion is easier on the brain.  
+
+**Models —** These are your business models that you manipulate in your business logic.  
+
+**Repositories —** This package only contains interfaces that the database or some other outer layer implements. These interfaces are used by Interactors to access and store data. This is also called a repository pattern.  
+  
+**Executor —** This package contains code for making Interactors run in the background by using a worker thread executor. This package is generally not something you need to change.  
+  
+## Java Design Patterns
+  
+In core java, there are mainly three types of design patterns, which are further divided into their sub-parts:  
+  
+#### 1.Creational Design Pattern
+
+**Factory Pattern  
+Abstract Factory Pattern  
+Singleton Pattern  
+Prototype Pattern  
+Builder Pattern.**  
+  
+#### 2. Structural Design Pattern  
+  
+**Adapter Pattern  
+Bridge Pattern  
+Composite Pattern  
+Decorator Pattern  
+Facade Pattern  
+Flyweight Pattern  
+Proxy Pattern**  
+  
+#### 3. Behavioral Design Pattern  
+  
+**Chain Of Responsibility Pattern  
+Command Pattern  
+Interpreter Pattern  
+Iterator Pattern  
+Mediator Pattern  
+Memento Pattern  
+Observer Pattern  
+State Pattern  
+Strategy Pattern  
+Template Pattern  
+Visitor Pattern** 
 
             
