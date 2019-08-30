@@ -29,7 +29,7 @@ example: Han Solo and Chewbacca aboard the Millennium Falcon.
   
 Now lets understand the 5 principles one by one  
   
-### Single Responsibility Principle (SRP):  
+### S - Single Responsibility Principle (SRP):  
 A class should have only one reason to change.  
   
 Now i will explain how this principle violets in below example  
@@ -74,10 +74,14 @@ In the above example Student handling the two task which is against the rule.  W
                 }
             }```  
                       
-### Open Closed Principle (OCP):  
+### O - Open Closed Principle (OCP):  
 Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.  
 **open for extension:** new behaviour can be added to satisfy the new requirements.  
 **closed for modification:** to extending the new behaviour are not required modify the existing code.  
+  
+  
+You should be able to extend a class’s behavior, without modifying it.
+This principle is the foundation for building code that is maintainable and reusable.  
   
 ***Benefits:***  
 Code maintainable and reusable.  
@@ -101,7 +105,25 @@ We have a rectangle class
         
         
 
-
+### Liskove Substitution Principle  
+  
+Derived classes must be substitutable for their base classes.
+What is wanted here is something like the following substitution property: If
+for each object o1 of type S there is an object o2 of type T such that for all
+programs P defined in terms of T, the behavior of P is unchanged when o1 is
+substituted for o2 then S is a subtype of T.  
+  
+### I — Interface Segregation Principle  
+  
+Make fine grained interfaces that are client specific.  
+Clients should not be forced to implement interfaces they do not use.  
+  
+### D — Dependency Inversion Principle  
+  
+Depend on abstractions, not on concretions.  
+A. High level modules should not depend upon low level modules. Both should depend upon abstractions.  
+B. Abstractions should not depend upon details. Details should depend upon abstractions.  
+Robert C. Martin
 
 
             
