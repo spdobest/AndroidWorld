@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AndroidWorld</string>
+
+    <!--MOVIEDBAPI KEY-->
+    <string name="moviedb_api_key">b7eb389e9e6ad5e434077e4b6d83ad78</string>
+    <string name="moviedb_url">https://api.themoviedb.org/3/movie/550?api_key=b7eb389e9e6ad5e434077e4b6d83ad78</string>
+    <string name="moviedb_readaccess_token">
+        eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiN2ViMzg5ZTllNmFkNWU0MzQwNzdlNGI2ZDgzYWQ3OCIsInN1YiI6IjVhOTI5YWQ5MGUwYTI2MTZjMzAxY2IyOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WK8z4ipmqtQUKpsGQi2wCwBrcFow0Lq5nxi-ANNvzAY
+    </string>
+
 </resources>

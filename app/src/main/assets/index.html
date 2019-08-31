@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+
+    <title>Hello</title>
+
+    <style>
+       body,html {
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: top;
+        align-items: center;
+        color: #F89821;
+        background-color: #ffffff;
+        padding: 20px;
+        margin-bottom: 10px;
+      }
+
+
+    </style>
+
+</head>
+<body>
+<input onClick="showAndroidToast('Hello Android!')" type="button" value="Say hello"/>
+<br/><br/>
+<input onClick="showVersion('called within the html')" type="button" value="Show Version"/>
+<br/><br/>
+<p id="version"></p><br>
+<br><br>
+<input onClick="showList()" type="button" value="Show List"/>
+<br><br>
+<ul id="aaron-family"></ul>
+
+<script type="text/javascript">
+
+var family = {
+  aaron: {
+    name: 'Aaron',
+    age: 30
+  },
+  megan: {
+    name: 'Megan',
+    age: 40
+  },
+  aaliyah: {
+    name: 'Aaliyah',
+    age: 2
+  }
+}
+
+        <!-- Sending value to Android -->
+        function showAndroidToast(toast) {
+            AndroidInterface.showToast(toast);
+        }
+
+        <!-- Getting value from Android -->
+        function showVersion(msg) {
+            var myVar = AndroidInterface.getAndroidVersion();
+            document.getElementById("version").innerHTML = msg + " You are running API Version " + myVar;
+        }
+
+        function showList() {
+            for (var prop in family) {
+            document.getElementById('aaron-family').innerHTML += '<li>' + prop + '</li>';
+            console.log(prop);
+            }
+        }
+
+</script>
+</body>
+</html>

@@ -126,6 +126,9 @@ android {
      * DATA BINDING
      */
     dataBinding.enabled = true
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
@@ -151,18 +154,16 @@ dependencies {
     /**
      * DAGGER2
      */
-    implementation 'com.google.dagger:dagger-android:2.22'
-    implementation 'com.google.dagger:dagger-android-support:2.22' // if you use the support libraries
-    kapt 'com.google.dagger:dagger-android-processor:2.21'
-    kapt 'com.google.dagger:dagger-compiler:2.21'
+    implementation 'com.google.dagger:dagger-android:2.24'
+    implementation 'com.google.dagger:dagger-android-support:2.24' // if you use the support libraries
+    kapt 'com.google.dagger:dagger-android-processor:2.24'
+    kapt 'com.google.dagger:dagger-compiler:2.24'
 
     /**
      * RETROFIT 2
      */
-    implementation 'com.google.dagger:dagger-android:2.22'
-    implementation 'com.google.dagger:dagger-android-support:2.22' // if you use the support libraries
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.21'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.21'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 
     /**
      * ********************************JETPACK********************************
@@ -224,7 +225,7 @@ dependencies {
     /**
      * ROOM DATABASE
      */
-    def room_version = "2.2.0-alpha02"
+    def room_version = "2.2.0-beta01"
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"

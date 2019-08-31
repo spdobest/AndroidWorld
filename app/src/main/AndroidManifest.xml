@@ -8,9 +8,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission
-            android:name="android.permission.USE_BIOMETRIC"/>
-
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
 
     <application
             android:allowBackup="true"
@@ -22,7 +20,9 @@
             android:theme="@style/AppTheme"
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
-        <activity android:name=".security.biometricAuth.BiometricAuthActivity">
+        <activity android:name=".dagger2.Dagger2Activity">
+        </activity>
+        <activity android:name=".communicationWithWebview.MyWebViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <action android:name="android.intent.action.MAIN"/>
@@ -30,10 +30,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".security.biometricAuth.BiometricAuthActivity">
+        </activity>
         <activity android:name=".security.encriptedSharedPreference.EncriptedSharedPrefActivity">
         </activity>
         <activity android:name=".activitylifecycle.LifecycleActivity">
-
         </activity>
         <activity android:name=".launchmode.LuncherActivityB">
         </activity>
