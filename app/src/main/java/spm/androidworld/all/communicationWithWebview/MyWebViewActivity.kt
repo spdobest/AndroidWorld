@@ -4,13 +4,13 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
-import android.webkit.JsResult
-import android.webkit.WebChromeClient
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_my_web_view.*
 
+/**
+ * https://www.checkmarx.com/2017/11/16/android-webview-secure-coding-practices/
+ */
 
 class MyWebViewActivity : AppCompatActivity() {
 
@@ -33,6 +33,19 @@ class MyWebViewActivity : AppCompatActivity() {
             //Calling a javascript function in html page
             view.loadUrl("javascript:alert(showVersion('called by Android'))")
         }
+
+        override fun shouldOverrideUrlLoading(
+            view: WebView?,
+            request: WebResourceRequest?
+        ): Boolean {
+
+            if (request?.url?.toString()?.startsWith("S")!!) {
+
+            }
+
+            return super.shouldOverrideUrlLoading(view, request)
+        }
+
     }
 
     private inner class MyWebChromeClient : WebChromeClient() {
