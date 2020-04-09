@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayoutError"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dimen_20dp"
+    android:visibility="gone"
+    tools:visibility="visible"
+
+    >
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewErrorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="center"
+        android:padding="@dimen/dimen_10dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/dimen_20sp"
+        tools:text="Error Title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_40dp"
+        android:layout_below="@+id/textViewErrorTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:background="@drawable/button_selector_default"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/retry"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_12sp" />
+
+</RelativeLayout>

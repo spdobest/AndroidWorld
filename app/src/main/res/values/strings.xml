@@ -12,7 +12,91 @@
     <string name="save">Save</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_stranger">Hello Stranger</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+    <string name="home">Home</string>
+    <string name="send_to">Send To</string>
+    <string name="openlink">Open Link</string>
+    <string name="go">GO</string>
+
+
+    <string name="student">Student</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="have_account">Already have Account ? Login</string>
+    <string name="hint_name">Name</string>
+    <string name="sub1">Subject1</string>
+    <string name="sub2">Subject2</string>
+    <string name="sub4">Subject4</string>
+    <string name="sub3">Subject3</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="please_enter_your_password">Please ENter Password</string>
+    <string name="please_enter_your_valid_email">Please enter valid email i</string>
+    <string name="invalid_login">Invalid User name or Password</string>
+    <string name="please_select_studentorteacher">Please Select Student or Teacher</string>
+    <string name="please_select_subject">Please Select Subject</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="ok">Okay</string>
+    <string name="hint_mobile">Mobile Number</string>
+    <string name="submit">Submit</string>
+    <string name="isteacher">Is Teacher</string>
+    <string name="login_using">Login Using</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="we_donot_post">We do not post anything</string>
+    <string name="or_using_email">Or Using Email Id</string>
+    <string name="something_went_wrong">Something Went Wrong</string>
+    <string name="data_not_available">Data Not Available</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skip">Skip</string>
+    <string name="retry">Retry</string>
+    <string name="dont_have_acc_registernow">Dont Have Account ? Register Now</string>
+    <string name="already_have_acc_loginnow">Already Have Account ? Login Now</string>
+    <string name="chat">Chat</string>
+    <string name="status">Status</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="notifications_admin_channel_name">Heyy Channel</string>
+    <string name="notifications_admin_channel_description">Hey Channel Description</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+
+    <string-array name="tabArray">
+        <item>Chat</item>
+        <item>User</item>
+        <item>News</item>
+    </string-array>
+    <string name="title_activity_chat">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="enter_msg_hero">Enter Message Here...</string>
+    <string name="share">Share</string>
+    <string name="delete">Delete</string>
+    <string name="menu_item">Menu Item</string>
+    <string name="extra_menu_item">Extra Menu Item</string>
+    <string name="rating">Rating</string>
+    <string name="logout">Logout</string>
 </resources>

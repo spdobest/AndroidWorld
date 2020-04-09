@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="viewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="viewText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:selectable">false</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="viewEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:selectable">false</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <!-- <style name="AppTheme" parent="Theme.AppCompat.Light">
+         <item name="colorPrimary">@color/colorPrimary</item>
+         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+         <item name="colorAccent">@color/colorAccent</item>
+         <item name="windowNoTitle">true</item>
+         <item name="android:windowContentTransitions">true</item>
+     </style>-->
+
+    <!--FOR TEXTVIEW-->
+    <style name="textStyle_body" parent="android:Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:alpha">0.87</item>
+    </style>
+
+    <!--FOR NORMAL TEXTVIEW-->
+    <style name="textStyle_normal" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/dimen_3dp</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:alpha">0.87</item>
+    </style>
+
+    <!--FOR NORMAL LAYOUT-->
+    <style name="layout_normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@color/window_bg</item>
+    </style>
+
+    <!--FOR NORMAL LAYOUT-->
+    <style name="normal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/dimen_3dp</item>
+    </style>
+
+    <!--FOR Button Colored-->
+    <style name="buttonStyle" parent="Base.Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:background">@drawable/button_selector_default</item>
+        <item name="android:alpha">0.87</item>
+    </style>
+
+    <!--FOR Button Colored-->
+    <style name="buttonColoredStyle" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:paddingLeft">@dimen/dimen_4dp</item>
+        <item name="android:paddingRight">@dimen/dimen_4dp</item>
+        <item name="android:alpha">0.87</item>
+    </style>
+
+    <!--FOR Button Colored-->
+    <style name="buttonStyleBoarderless" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:paddingLeft">@dimen/dimen_4dp</item>
+        <item name="android:paddingRight">@dimen/dimen_4dp</item>
+        <item name="android:alpha">0.87</item>
+    </style>
+
+    <!--FOR Button Colored-->
+    <style name="buttonStyleColorBoarderless" parent="Base.Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:paddingLeft">@dimen/dimen_4dp</item>
+        <item name="android:paddingRight">@dimen/dimen_4dp</item>
+        <item name="android:alpha">0.87</item>
+    </style>
+
+    <style name="StyledTilEditTextTheme">
+        <item name="android:imeOptions">actionNext</item>
+        <item name="colorControlNormal">@color/color_gray</item>
+        <item name="colorControlActivated">@color/colorCompany</item>
+        <item name="android:textColorPrimary">@color/color_gray</item>
+        <item name="android:textSize">@dimen/dimen_16sp</item>
+    </style>
+
+    <style name="StyledTilEditText">
+        <item name="android:theme">@style/StyledTilEditTextTheme</item>
+        <item name="android:paddingTop">@dimen/dimen_4dp</item>
+        <!--<item name="android:background">@drawable/edittext_bottom_line</item>-->
+    </style>
+
+    <!--NAVIGATION VIEW STYLE-->
+
+    <!--NEW STYLE WITH MATERIAL DESIGN AND OTHER-->
+
+    <style name="spButtonStyleGreen" parent="Base.Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingRight">@dimen/dimen_4dp</item>
+        <item name="background">@drawable/btn_selector</item>
+    </style>
+
+    <!--EDITTEXT STYLE-->
+    <style name="edittext_style_norml" parent="@android:style/Widget.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <!--<item name="android:layout_gravity">center_vertical</item>-->
+        <item name="android:textSize">14sp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+
+    <style name="FabStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="elevation">4dp</item>
+        <item name="pressedTranslationZ">12dp</item>
+        <item name="rippleColor">@android:color/white</item>
+        <item name="android:background">@drawable/fab_selector</item>
+    </style>
+
+    <style name="GoogleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="elevation">4dp</item>
+        <item name="pressedTranslationZ">12dp</item>
+        <item name="rippleColor">@android:color/white</item>
+        <item name="android:background">@drawable/google_selector</item>
+    </style>
+
+
+    <style name="animationDialog">
+        <!--<item name="android:windowEnterAnimation">@anim/slide_in_from_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_right</item>-->
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <!--BUTTON STYLE WITH RIPPLE-->
+    <style name="Button_style_norml">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:background">@drawable/rounded_corner_4dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+
+    <style name="tabCustomStyle" parent="Widget.Design.TabLayout">
+        <!--<item name="tabMaxWidth">@dimen/tab_max_width</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>-->
+        <item name="tabIndicatorColor">@color/colorAccent</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabPaddingStart">15dp</item>
+        <item name="tabPaddingEnd">15dp</item>
+        <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
+        <item name="tabSelectedTextColor">?android:attr/colorControlNormal</item>
+    </style>
+
+    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/black</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="EditTextTheme" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/color_8a000000</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/color_8a000000</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorControlNormal">@android:color/black</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+
+
+    <style name="ratingBarStyle" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlActivated">@color/color_D3D3D3</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:maxHeight">10dip</item>
+    </style>
+
+    <style name="MaterialAnimations" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="fullScreenDialogTheme" parent="@android:style/Theme.Panel">
+        <item name="android:windowAnimationStyle">@style/MyAnimation.Window</item>
+    </style>
+
+    <style name="MyAnimation.Window" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/anim_in_dialogfragment</item>
+        <item name="android:windowExitAnimation">@anim/anim_out_dialogfragment</item>
+    </style>
+
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+</resources>

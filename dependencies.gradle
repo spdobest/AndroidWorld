@@ -1,0 +1,173 @@
+ ext {
+    appMinSdkVersion = 21
+    appTargetSdkVersion = 28
+    appCompileSdkVersion = 28
+
+    androidXVersion = '1.0.2'
+    androidxRecyclerviewVersion = '1.1.0'
+    androidxRecyclerviewSelectionVersion = '1.1.0-beta01'
+    kotlinVersion = '1.3.61'
+    appCompatVersion = "28.0.0"
+    constraintLayoutVersion = "1.1.3"
+    gsonVersion = "2.8.5"
+    rxKotlinVersion = "2.3.0"
+    rxAndroidVersion = "2.1.0"
+    retrofitVersion = "2.4.0"
+    okHttp3Version = "3.11.0"
+    glideVersion = "4.9.0"
+
+    junit4Version = "4.12"
+    testRunnerVersion = "1.0.2"
+    mockKVersion = "1.8.13.kotlin13"
+    espressoVersion = "3.0.2"
+
+    androidXKtx = '1.0.2'
+    coreKtx = '1.2.0'
+
+    room_version = '2.2.3'
+
+    dagger_version = '2.25.4'
+
+    coroutines_version = '1.2.1'
+    lifecycle_version = '2.1.0'
+    nav_version = "2.2.0-rc04"
+    koin_version = '2.0.1'
+    paging_version = '2.1.1'
+
+    // Other Libraries Versions
+    picasso_version = '2.71828'
+    swipeRefreshLayout_version = '1.0.0'
+    rxJava_version = '2.2.9'
+    rxAndroid_version = '2.1.0'
+
+    libraries = [
+            appCompat            : "androidx.appcompat:appcompat:" + androidXVersion,
+            kotlinStdLib         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:" + kotlinVersion,
+            constraintLayout     : "androidx.constraintlayout:constraintlayout:" + constraintLayoutVersion,
+            recyclerview         : "androidx.recyclerview:recyclerview:" + androidxRecyclerviewVersion,
+            recyclerviewSelection: "androidx.recyclerview:recyclerview-selection:"+androidxRecyclerviewSelectionVersion,
+            //swipe refresh layout
+            swipeRefreLayout     : "androidx.swiperefreshlayout:swiperefreshlayout:"+swipeRefreshLayout_version,
+            rxKotlin             : "io.reactivex.rxjava2:rxkotlin:" + rxKotlinVersion,
+            rxAndroid            : "io.reactivex.rxjava2:rxandroid:" + rxAndroidVersion,
+           //coroutines
+            coroutinesCore       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            coroutinesAndroid    : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
+            material             : "com.google.android.material:material:1.1.0-alpha06",
+            // navigation
+            navigationFragmentKtx: "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            navigationUiKtx      : "androidx.navigation:navigation-ui-ktx:$nav_version",
+            viewpager2           : 'androidx.viewpager2:viewpager2:1.0.0'
+    ]
+
+     // https://developer.android.com/kotlin/ktx
+     // you can add other ktx libraries from the above link
+     ktx = [
+             //KTX libraries
+             ktxCore              : "androidx.core:core-ktx:"+coreKtx,
+             ktxActivity          : "androidx.activity:activity-ktx:1.0.0",
+             ktxCollection        : "androidx.collection:collection-ktx:1.1.0",
+             androidX             : "androidx.core:core-ktx:"+androidXKtx
+     ]
+
+     extLibraries = [
+             glide                : "com.github.bumptech.glide:glide:" + glideVersion,
+             retrofit             : "com.squareup.retrofit2:retrofit:" + retrofitVersion,
+             retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:" + retrofitVersion,
+             retrofitRxAdapter    : "com.squareup.retrofit2:adapter-rxjava2:" + retrofitVersion,
+             okhttp3              : "com.squareup.okhttp3:okhttp:" + okHttp3Version,
+             okhttp3Interceptor   : "com.squareup.okhttp3:logging-interceptor:" + okHttp3Version,
+             circularImage        : "de.hdodenhof:circleimageview:2.1.0",
+             gson                 : "com.google.code.gson:gson:" + gsonVersion,
+             supernovaOlder       : "hani.momanii.supernova_emoji_library:supernova-emoji-library:0.0.2",
+             dagger               : "com.google.dagger:dagger-android:$dagger_version",
+             daggerSupport        : "com.google.dagger:dagger-android-support:$dagger_version",
+             daggerProcessor      : "com.google.dagger:dagger-android-processor:$dagger_version", // annotationProcessor
+             //picaso
+             picasso              : "com.squareup.picasso:picasso:"+picasso_version
+     ]
+
+    // "com.github.hani-momanii:SuperNova-Emoji:1.1"
+
+    navigation = [
+            runtime : "androidx.navigation:navigation-runtime:$nav_version",
+            runtime_ktx : "androidx.navigation:navigation-runtime-ktx:$nav_version",
+            fragment : "androidx.navigation:navigation-fragment:$nav_version",
+            fragment_ktx : "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            ui : "androidx.navigation:navigation-ui:$nav_version",
+            ui_ktx : "androidx.navigation:navigation-ui-ktx:$nav_version",
+            safe_args_plugin : "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+    ]
+
+    koin = [
+            // Koin for Kotlin
+            koinCore    :   "org.koin:koin-core:$koin_version",
+            // Koin extended & experimental features
+            koinExt     :   "org.koin:koin-core-ext:$koin_version",
+            // Koin for Unit tests
+            koinTest    :   "org.koin:koin-test:$koin_version", //testImplementation
+            // Koin for Java developers
+            koinJava    :   "org.koin:koin-java:$koin_version",
+            // koin android
+            koinAndroid : "org.koin:koin-android:2.0.1",
+            // koinScope
+            koinScope : "org.koin:koin-androidx-scope:2.0.1",
+            // koin viewmodel
+            koinViewModel : "org.koin:koin-androidx-viewmodel:2.0.1"
+    ]
+
+    firebase = [
+            firebaseCore     : "com.google.firebase:firebase-core:17.2.2",
+            firebaseDatabase : "com.google.firebase:firebase-database:19.2.0",
+            firebaseStorage  : "com.google.firebase:firebase-storage:19.1.0",
+            firebaseAuth     : "com.google.firebase:firebase-auth:19.2.0",
+            fcm              : "com.google.firebase:firebase-messaging:20.1.0",
+            //16.0.2
+            googlePlayServiceAUth : "com.google.android.gms:play-services-auth:16.0.0"
+           ]
+
+     rx = [
+             //Rx
+             rxJava         : "io.reactivex.rxjava2:rxjava:"+rxJava_version,
+             rxAndroid      : "io.reactivex.rxjava2:rxandroid:"+rxAndroid_version
+     ]
+
+    roomdatabase = [
+            roomRuntime  : "androidx.room:room-runtime:$room_version",
+            roomCompiler : "androidx.room:room-compiler:$room_version", // annotationProcessor
+            // For Kotlin use kapt instead of annotationProcessor
+            // optional - Kotlin Extensions and Coroutines support for Room
+            roomKtx : "androidx.room:room-ktx:$room_version"//implementation
+    ]
+
+    lifeCycleLibs = [
+            lifecycleExtension :  "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
+            viewmodel : "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version",
+            liveDataNew :  "androidx.lifecycle:lifecycle-livedata:$lifecycle_version",
+            lifecycleAnnotation : "androidx.lifecycle:lifecycle-compiler:$lifecycle_version", // annotationProcessor
+            lifecycleJava8 :  "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version",
+            runtime :  "androidx.lifecycle:lifecycle-runtime:$lifecycle_version",
+            pagingRuntime :  "androidx.paging:paging-runtime:$paging_version", // For Kotlin use paging-runtime-ktx
+            // alternatively - without Android dependencies for testing
+            pagingCommon : "androidx.paging:paging-common:$paging_version", // testImplementationFor Kotlin use paging-common-ktx
+            // optional - RxJava support
+            pagingRxJava2 : "androidx.paging:paging-rxjava2:$paging_version" // For Kotlin use paging-rxjava2-ktx
+     ]
+
+     kaptLibraries = [
+     ]
+
+    testLibraries = [
+            junit4   : "junit:junit:" + junit4Version,
+            mockK    : "io.mockk:mockk:" + mockKVersion,
+            rxKotlin : libraries.rxKotlin,
+            rxAndroid: libraries.rxAndroid
+    ]
+
+    androidTestLibraries = [
+            testRunner: "com.android.support.test:runner:" + testRunnerVersion,
+            testRules : "com.android.support.test:rules:" + testRunnerVersion,
+            espresso  : "com.android.support.test.espresso:espresso-core:" + espressoVersion,
+            mockK     : "io.mockk:mockk-android:" + mockKVersion
+    ]
+}

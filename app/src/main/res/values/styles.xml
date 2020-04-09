@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -6,6 +6,117 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar1">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!--STYLE FOR TOOLBAR-->
+    <style name="toolbarStyle" parent="Base.Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:elevation">@dimen/dimen_2dp</item>
+        <item name="android:layout_gravity">top</item>
+    </style>
+
+    <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
+        <item name="tabMaxWidth">300dp</item>
+        <item name="tabIndicatorColor">@color/colorAccent</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
+        <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeSplash" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="windowBackground">@drawable/splash_gradient_bg</item>-->
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeChat" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="windowBackground">@drawable/splash_gradient_bg</item>-->
+    </style>
+
+    <style name="AppTheme.NoActionBarTransparent">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:toolbarStyle">@style/Theme.AppCompat.Light</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:toolbarStyle">@style/Theme.AppCompat.Light</item>
+    </style>
+
+    <style name="HomeTheme" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/home_colorAccent</item>
+        <item name="colorControlNormal">@color/home_textColorprimary</item>
+        <item name="colorButtonNormal">@color/home_colorAccent</item>
+        <!--<item name="android:windowBackground">@drawable/splash_bg</item>-->
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="LoginTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/home_colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/edit_text_color</item>
+        <item name="colorControlActivated">?attr/colorPrimary</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+    </style>
+
+    <style name="ThemeOverlay.MyApp.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Parent theme sets colorControlNormal to textColorPrimary. -->
+        <item name="android:textColorPrimary">@color/home_textColorprimary</item>
+        <item name="colorControlNormal">#000000</item>
+        <!-- tools:ignore="NewApi" to shut IDE up -->
+        <!-- on API 21 the overflow icon ignores colorControlNormal attr in favor of the native version -->
+        <item name="android:colorControlNormal" tools:ignore="NewApi">?colorControlNormal</item>
+    </style>
+
+    <style name="ThemeOverlay.login.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Parent theme sets colorControlNormal to textColorPrimary. -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <!-- tools:ignore="NewApi" to shut IDE up -->
+        <!-- on API 21 the overflow icon ignores colorControlNormal attr in favor of the native version -->
+        <item name="android:colorControlNormal" tools:ignore="NewApi">?colorControlNormal</item>
+    </style>
+
+    <style name="styleDialogFragment">
+        <item name="android:windowEnterAnimation">@anim/pop_up</item>
+        <item name="android:windowExitAnimation">@anim/pop_down</item>
     </style>
 
 </resources>

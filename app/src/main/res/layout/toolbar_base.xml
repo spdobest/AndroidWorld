@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@drawable/shadow_bg"
+    android:orientation="vertical"
+    app:layout_collapseMode="pin"
+    app:theme="@style/AppTheme">
+    <!--app:layout_scrollFlags="scroll|enterAlways"
+    app:layout_collapseMode="parallax"-->
+
+    <RelativeLayout
+        android:id="@+id/relativeToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mTextViewTitleToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="@dimen/dimen_10dp"
+            android:layout_alignParentLeft="@dimen/dimen_10dp"
+            android:layout_centerVertical="true"
+            android:text="@string/app_name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dimen_16sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mImageViewSearchToolbar"
+            android:layout_width="@dimen/dimen_20dp"
+            android:layout_height="@dimen/dimen_20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_marginRight="@dimen/dimen_16dp"
+            android:layout_toStartOf="@+id/mRelativeLayoutCart"
+            android:layout_toLeftOf="@+id/mRelativeLayoutCart"
+            app:srcCompat="@drawable/ic_search" />
+
+
+        <RelativeLayout
+            android:id="@+id/mRelativeLayoutCart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_marginRight="@dimen/dimen_16dp"
+            android:layout_toStartOf="@+id/mRelativeLayoutNotificationToolbar"
+            android:layout_toLeftOf="@+id/mRelativeLayoutNotificationToolbar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImageViewCartPdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mTextViewCartCount"
+                android:layout_width="@dimen/dimen_20dp"
+                android:layout_height="@dimen/dimen_20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginLeft="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@drawable/circle_bg_textview"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dimen_10sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mRelativeLayoutNotificationToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_marginRight="@dimen/dimen_16dp"
+            android:layout_toStartOf="@+id/mImageViewUser"
+            android:layout_toLeftOf="@+id/mImageViewUser">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImageViewNotificationToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mTextViewNotificationCount"
+                android:layout_width="@dimen/dimen_20dp"
+                android:layout_height="@dimen/dimen_20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginLeft="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@drawable/circle_bg_textview"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dimen_10sp" />
+
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mImageViewUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="end"
+            android:paddingEnd="@dimen/dimen_5dp" />
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>

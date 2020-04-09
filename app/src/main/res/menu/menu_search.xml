@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+
+    <item
+        android:id="@+id/menuleft_men"
+        android:icon="@drawable/ic_share"
+        android:title="@string/share"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuleft_women"
+        android:icon="@drawable/ic_rating"
+        android:title="@string/rating"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuleft_kids"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+</menu>
