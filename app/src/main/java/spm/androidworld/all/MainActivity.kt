@@ -2,6 +2,7 @@ package spm.androidworld.all
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -55,21 +56,21 @@ class MainActivity : BaseActivity(), BaseActivity.OnNavigationMenuClickListener,
             mBottomSheetDialogLanguage.dismiss()
             LocaleHelper.setLocale(this, "hi");
             changeLanguage.text = getString(R.string.hindi)
-            recreate();
+            updateUI()
         }
 
         tvFrance?.setOnClickListener {
             mBottomSheetDialogLanguage.dismiss()
             LocaleHelper.setLocale(this, "fr");
             changeLanguage.text = getString(R.string.france)
-            recreate()
+            updateUI()
         }
 
         tvEng?.setOnClickListener {
             mBottomSheetDialogLanguage.dismiss()
             LocaleHelper.setLocale(this, "en");
             changeLanguage.text = getString(R.string.english)
-            recreate()
+            updateUI()
         }
         mBottomSheetDialogLanguage.show()
     }
@@ -88,6 +89,16 @@ class MainActivity : BaseActivity(), BaseActivity.OnNavigationMenuClickListener,
                 showLanguageBottomsheet()
             }
         }
+    }
+
+    fun updateUI() {
+        val configuration = Configuration(this.resources.configuration)
+        buttonFirstScreen.text =
+            createConfigurationContext(configuration).resources.getString(R.string.second_screen)
+        buttonSecondScreen.text =
+            createConfigurationContext(configuration).resources.getString(R.string.second_screen)
+        changeLanguage.text =
+            createConfigurationContext(configuration).resources.getString(R.string.change_language)
     }
 
 }
