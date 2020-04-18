@@ -5,12 +5,8 @@
 package com.heyyy.main.utility
 
 import android.graphics.Paint
-import android.text.TextUtils
 import android.util.Patterns
 import android.widget.TextView
-import com.heyyy.main.utility.AppConstant.Companion.EMPTY_TEXT
-import java.io.UnsupportedEncodingException
-import java.net.URLEncoder
 import java.util.*
 
 /**
@@ -28,17 +24,6 @@ object StringUtil {
             return null;
         }
     }*/
-    fun getEncodedText(param: String?): String {
-        try {
-            if (!TextUtils.isEmpty(param)) return URLEncoder.encode(
-                param,
-                DEFAULT_PARAMS_ENCODING
-            )
-        } catch (e: UnsupportedEncodingException) {
-            return EMPTY_TEXT
-        }
-        return EMPTY_TEXT
-    }
 
     fun setStrikeTextViewWithString(view: TextView, text: String?) {
         view.text = text

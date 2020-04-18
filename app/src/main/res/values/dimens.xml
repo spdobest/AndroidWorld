@@ -95,6 +95,7 @@
     <dimen name="dimen_8sp">8sp</dimen>
     <dimen name="dimen_70dp">70dp</dimen>
     <dimen name="dimen_90dp">90dp</dimen>
+    <dimen name="dimen_180dp">200dp</dimen>
     // for caption
 
 </resources>

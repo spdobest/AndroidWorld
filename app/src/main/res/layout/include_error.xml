@@ -31,7 +31,7 @@
         android:layout_below="@+id/textViewErrorTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dimen_30dp"
-        android:background="@drawable/button_selector_default"
+            android:background="@drawable/button_selector"
         android:fontFamily="@font/roboto_light"
         android:text="@string/retry"
         android:textColor="@color/white"

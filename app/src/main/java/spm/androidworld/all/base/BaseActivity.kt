@@ -16,10 +16,10 @@ import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.android.assignment.base.BaseInterface
 import com.google.android.material.navigation.NavigationView
-import com.heyyy.main.utility.AppConstant
 import kotlinx.android.synthetic.main.activity_base.*
 import spm.androidworld.all.R
 import spm.androidworld.all.utility.ImageUtil
+import spm.androidworld.all.utility.LocaleHelper
 import spm.androidworld.all.utility.LogUtil
 
 
@@ -35,6 +35,10 @@ abstract class BaseActivity : AppCompatActivity(), BaseInterface, BaseFragment.T
         setUpDrawer()
         LogUtil.showLog("Base", "oncreate")
         onNavigationMenuCLickListener = this as OnNavigationMenuClickListener
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase))
     }
 
     fun setSecondaryActivity() {
@@ -150,7 +154,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseInterface, BaseFragment.T
             when (menuItem.itemId) {
                 //HOME WITH TABS
                 R.id.menuleft_men -> {
-                    onNavigationMenuCLickListener.onNavigationMenuClick(AppConstant.NAV_TYPE_MEN)
+
                 }
                 R.id.menuleft_women -> {
 
@@ -192,7 +196,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseInterface, BaseFragment.T
 
     protected open fun setHomeUpButtonColor(colorId: Int) {
         val upArrow =
-            ContextCompat.getDrawable(this, R.drawable.ic_delete)
+            ContextCompat.getDrawable(this, R.drawable.ic_download)
         supportActionBar?.setHomeAsUpIndicator(
             ImageUtil.changeTintColor(
                 this,

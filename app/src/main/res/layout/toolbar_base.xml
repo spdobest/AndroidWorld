@@ -37,7 +37,7 @@
             android:layout_marginRight="@dimen/dimen_16dp"
             android:layout_toStartOf="@+id/mRelativeLayoutCart"
             android:layout_toLeftOf="@+id/mRelativeLayoutCart"
-            app:srcCompat="@drawable/ic_search" />
+                app:srcCompat="@drawable/ic_menu" />
 
 
         <RelativeLayout
@@ -64,7 +64,7 @@
                 android:layout_marginStart="@dimen/dimen_15dp"
                 android:layout_marginLeft="@dimen/dimen_15dp"
                 android:layout_marginTop="@dimen/dimen_10dp"
-                android:background="@drawable/circle_bg_textview"
+                    android:background="@drawable/circular_bg"
                 android:gravity="center"
                 android:text="0"
                 android:textColor="@android:color/white"
@@ -97,7 +97,7 @@
                 android:layout_marginStart="@dimen/dimen_15dp"
                 android:layout_marginLeft="@dimen/dimen_15dp"
                 android:layout_marginTop="@dimen/dimen_10dp"
-                android:background="@drawable/circle_bg_textview"
+                    android:background="@drawable/circular_bg"
                 android:gravity="center"
                 android:text="0"
                 android:textColor="@android:color/white"

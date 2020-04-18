@@ -19,7 +19,7 @@
             android:id="@+id/imageViewBack_basedialogfragment"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/ic_arrow_back_white_24dp" />
+                app:srcCompat="@drawable/ic_back" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewTitle_basedialogfragment"
