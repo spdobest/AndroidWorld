@@ -1,4 +1,4 @@
-package com.heyyy.main.base.fragment
+package spm.androidworld.all.base
 
 import android.content.Context
 import android.content.DialogInterface
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.annotation.NonNull
-import com.android.assignment.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import spm.androidworld.all.R
 
 
 class BaseBottomSheetDialog : BottomSheetDialog {

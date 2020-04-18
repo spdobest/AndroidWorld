@@ -1,7 +1,7 @@
-package com.heyyy.main.utility
+package spm.androidworld.all.utility
 
 import android.util.Log
-import com.android.assignment.BuildConfig
+import spm.androidworld.all.BuildConfig
 
 /**
  * Created by Sibaprasad Mohanty on 2020-01-13.

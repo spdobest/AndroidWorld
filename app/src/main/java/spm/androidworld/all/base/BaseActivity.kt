@@ -14,17 +14,18 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.android.assignment.base.BaseFragment
 import com.android.assignment.base.BaseInterface
-import spm.androidworld.all.R
 import com.google.android.material.navigation.NavigationView
 import com.heyyy.main.utility.AppConstant
 import kotlinx.android.synthetic.main.activity_base.*
+import spm.androidworld.all.R
 import spm.androidworld.all.utility.ImageUtil
+import spm.androidworld.all.utility.LogUtil
 
 
 abstract class BaseActivity : AppCompatActivity(), BaseInterface, BaseFragment.ToolbarListener {
 
+    private var isSecondaryActivity = false
     private var enableToolbarIcons: Boolean = false
     private lateinit var onNavigationMenuCLickListener:OnNavigationMenuClickListener
 
@@ -32,8 +33,22 @@ abstract class BaseActivity : AppCompatActivity(), BaseInterface, BaseFragment.T
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
         setUpDrawer()
-
+        LogUtil.showLog("Base", "oncreate")
         onNavigationMenuCLickListener = this as OnNavigationMenuClickListener
+    }
+
+    fun setSecondaryActivity() {
+        isSecondaryActivity = true
+        lockDrawer()
+        drawerToggleDelegate?.setActionBarUpIndicator(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.ic_back
+            ), R.string.back
+        )
+        toolbar.setNavigationOnClickListener(View.OnClickListener {
+            onBackPressed()
+        })
     }
 
     protected fun useLayout(container: FrameLayout, @LayoutRes layout: Int): View? {
@@ -78,21 +93,25 @@ abstract class BaseActivity : AppCompatActivity(), BaseInterface, BaseFragment.T
         setSupportActionBar(toolbar)
 
         val ab: ActionBar? = supportActionBar
-        with(ab) {
-            this?.setHomeAsUpIndicator(R.drawable.ic_menu)
-            this?.setDisplayHomeAsUpEnabled(true)
-        }
-
         val mDrawerToggle = ActionBarDrawerToggle(
             this, drawerLayoutBase, toolbar,
             R.string.drawer_open, R.string.drawer_close
         )
-        drawerLayoutBase.addDrawerListener(mDrawerToggle)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
-        mDrawerToggle.syncState()
+        with(ab) {
+            if (!isSecondaryActivity) {
+                this?.setHomeAsUpIndicator(R.drawable.ic_menu)
+                drawerLayoutBase.addDrawerListener(mDrawerToggle)
+                supportActionBar?.setDisplayHomeAsUpEnabled(true)
+                supportActionBar?.setHomeButtonEnabled(true)
+                mDrawerToggle.syncState()
+                setupDrawerContent(navigationViewHome)
+            } else {
+                this?.setHomeAsUpIndicator(R.drawable.ic_back)
+            }
+            this?.setDisplayHomeAsUpEnabled(true)
+        }
 
-        setupDrawerContent(navigationViewHome)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

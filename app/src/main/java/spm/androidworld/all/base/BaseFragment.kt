@@ -1,4 +1,4 @@
-package com.android.assignment.base
+package spm.androidworld.all.base
 
 
 import android.app.Activity
@@ -10,14 +10,12 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
-import com.android.assignment.R
-import com.heyyy.main.utility.LogUtil
 import kotlinx.android.synthetic.main.fragment_base.*
+import spm.androidworld.all.R
+import spm.androidworld.all.utility.LogUtil
 
 
 abstract class BaseFragment : Fragment() {
-
-//    https://github.com/MindorksOpenSource/android-mvvm-architecture
 
     private var mActivity: BaseActivity? = null
 

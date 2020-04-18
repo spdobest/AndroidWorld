@@ -22,12 +22,7 @@
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
         <activity android:name=".location.CurrentLocationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".android_o.NFeatureActivity" />
         <activity android:name=".android_p.PFeatureActivity" />
@@ -38,7 +33,6 @@
         </activity>
         <activity android:name=".navigation.welcome.WelcomeMeActivity" />
         <activity android:name=".saveApplicationState.SaveSateOfActivity" />
-        <activity android:name=".dagger2.Dagger2Activity" />
         <activity android:name=".communicationWithWebview.MyWebViewActivity" />
         <activity android:name=".security.biometricAuth.BiometricAuthActivity" />
         <activity android:name=".security.encriptedSharedPreference.EncriptedSharedPrefActivity" />
@@ -48,6 +42,16 @@
         <activity android:name=".testing.TestingActivity" />
         <activity android:name=".security.SecurityActivity" />
         <activity android:name=".MainActivity" />
+        <activity
+                android:name=".base.use.SecondaryActivity"
+                android:theme="@style/AppTheme.NoActionBar1">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

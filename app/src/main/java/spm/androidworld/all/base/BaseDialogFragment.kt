@@ -11,9 +11,10 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.DialogFragment
-import com.android.assignment.R
-import com.heyyy.main.utility.LogUtil
 import kotlinx.android.synthetic.main.dialogfragment_base.*
+import spm.androidworld.all.R
+import spm.androidworld.all.base.BaseActivity
+import spm.androidworld.all.utility.LogUtil
 
 
 /**
