@@ -105,3 +105,4 @@ SSL Pinning is an additional security layer to prevent MITM attack( Man in the M
   
 ## FOR MORE DETAILS ON ANDROID KEYSTORE  
 https://developer.android.com/training/articles/keystore  
+https://blog.bcaster.com/use-android-keystore-for-securely-storing-and-retrieving-the-data/  

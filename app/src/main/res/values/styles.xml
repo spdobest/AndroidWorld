@@ -114,9 +114,4 @@
         <item name="android:colorControlNormal" tools:ignore="NewApi">?colorControlNormal</item>
     </style>
 
-    <style name="styleDialogFragment">
-        <item name="android:windowEnterAnimation">@anim/pop_up</item>
-        <item name="android:windowExitAnimation">@anim/pop_down</item>
-    </style>
-
 </resources>

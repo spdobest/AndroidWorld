@@ -32,6 +32,7 @@ android {
 
         // Creates a property for the FileProvider authority.
         def filesAuthorityValue = applicationId + ".files"
+        def keyALias = "myKeyALias"
         // Creates a placeholder property to use in the manifest.
         manifestPlaceholders =
                 [filesAuthority: filesAuthorityValue]
@@ -39,6 +40,9 @@ android {
         buildConfigField("String",
                 "FILES_AUTHORITY",
                 "\"${filesAuthorityValue}\"")
+        buildConfigField("String",
+                "KEY_ALIAS",
+                "\"${keyALias}\"")
 
     }
 
@@ -52,15 +56,26 @@ android {
             storePassword keystoreProperties['storePassword']
         }
 
+        debug {
+            // Specifies the path to your keystore file.
+//            storeFile file("my-release-key.jks")
+//            // Specifies the password for your keystore.
+//            storePassword "password"
+//            // Specifies the identifying name for your key.
+//            keyAlias "my-alias"
+//            // Specifies the password for your key.
+//            keyPassword "password"
+        }
+
         release {
             // Specifies the path to your keystore file.
-            storeFile file("my-release-key.jks")
-            // Specifies the password for your keystore.
-            storePassword "password"
-            // Specifies the identifying name for your key.
-            keyAlias "my-alias"
-            // Specifies the password for your key.
-            keyPassword "password"
+//            storeFile file("my-release-key.jks")
+//            // Specifies the password for your keystore.
+//            storePassword "password"
+//            // Specifies the identifying name for your key.
+//            keyAlias "my-alias"
+//            // Specifies the password for your key.
+//            keyPassword "password"
         }
     }
 
@@ -76,7 +91,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "boolean", "isDebugable", "false"
-
         }
 
         debug {
