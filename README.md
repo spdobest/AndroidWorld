@@ -1,6 +1,75 @@
-# ANDROID SECURITY  
-https://proandroiddev.com/secure-data-in-android-encryption-in-android-part-1-e5fd150e316f  
-  
+# ANDROID SECURITY
+https://proandroiddev.com/secure-data-in-android-encryption-in-android-part-1-e5fd150e316f
+
+Its contains all the sample code of new and advance concepts in android
+
+We will Discuss the below points in this repository
+- Cryptography
+- Encryption and Decryption
+- Hashing
+- Symmetric and Asymmetric encryption
+- SSL Pinning
+- Encrypted Shared Preference
+- Encode and decode
+
+## Encoding
+- Encoding transforms data into another format using a scheme that is publicly available so that it can easily be reversed.
+- It does not require a key as the only thing required to decode it is the algorithm that was used to encode it.
+- Examples: ascii, unicode, URL Encoding, base64
+
+## Decoding
+- Encoding transforms data into another format using a scheme that is publicly available so that it can easily be reversed.
+- It does not require a key as the only thing required to decode it is the algorithm that was used to encode it.
+- Examples: ascii, unicode, URL Encoding, base64
+## Hashing
+- https://howtodoinjava.com/security/how-to-generate-secure-password-hash-md5-sha-pbkdf2-bcrypt-examples/
+- Hashing serves the purpose of ensuring integrity, i.e. making it so that if something is changed you can know that it’s changed.
+- Technically, hashing takes arbitrary input and produce a fixed-length string that has the following attributes:
+  - The same input will always produce the same output.
+  - Multiple disparate inputs should not produce the same output.
+  - It should not be possible to go from the output to the input.
+  - Any modification of a given input should result in drastic change to the hash.
+- Examples: sha-3, md5 (now obsolete), etc.
+## How hashes are used to protect passwords
+- You are probably wondering how the system checks your password if it has been hashed in a way that cannot be unscrambled. Well the key is that hashing the same data always gives the same output. So you proceed as follows:
+- Take the hash of the original password and store it.
+- When the user re-enters their password take the hash of the new password.
+
+If the new hash matches the old hash then let them in, otherwise refuse entry.
+## Encryption
+- The purpose of encryption is to transform data in order to keep it secret from others,
+- e.g. sending someone a secret letter that only they should be able to read, or securely sending a password over the Internet.
+- Rather than focusing on usability, the goal is to ensure the data cannot be consumed by anyone other than the intended recipient(s).
+- Examples: aes, blowfish, rsa
+## Decryption
+- Decryption is the process of taking encoded or encrypted text or other data and converting it back into text that you or the computer can read and understand.
+- This term could be used to describe a method of unencrypting the data manually or unencrypting the data using the proper codes or keys.
+- Examples: aes, blowfish, rsa
+## CRYPTOGRAPHY
+- It is a techniques to convert the plain text to CIPHER text (which is random data/ raw data) using a secret key is known as Cryptography.
+- There are two type of cryptography
+    - Symmetric Cryptography - Only one public key used to encrypt or decrypt the data.
+    - Asymmetric Cryptography - Two keys (private and public ) keys are used to encrypt or decrypt the data.
+## Symmetric Key Cryptography
+- Same Key used to encrypt and decrypt
+- Faster compared to public key encryption
+- Key needs to be stored securely.
+- Secure channel required to transfer the key
+**Disadvantage**
+- Any hacker can get the key and decrypt the encrypted data.
+- To decrypt the data, the other party require the secret key to decrypt the code, which need to send in the secure channel.
+## Asymmetric Key or Public KeyCryptography
+- Uses a public key to and private key
+- Public key used to encrypt the data
+- private key is used to decrypt the data
+- Slower compared with Symmetric key
+- The Private Key is intended to be private so that only the authenticated recipient can decrypt the message.
+- Public key cryptography allows someone to send their public key in an open, insecure channel.
+- Having a friend’s public key allows you to encrypt messages to them.
+- Your private key is used to decrypt messages encrypted to you.
+- Intermediaries—such as the email service providers, Internet service providers, and those on their networks—are able to see metadata this whole time: who is sending what to whom, when, what time it’s received, what the subject line is, that the message is encrypted, and so on.
+
+
 For Secure application's, Its very important to save the sensitive data with high security so that the middle man cant be hack or leak your sensitive data which leads to huge loss.  
   
 TO overcome this isues, we need to follow the following steps   
@@ -106,3 +175,5 @@ SSL Pinning is an additional security layer to prevent MITM attack( Man in the M
 ## FOR MORE DETAILS ON ANDROID KEYSTORE  
 https://developer.android.com/training/articles/keystore  
 https://blog.bcaster.com/use-android-keystore-for-securely-storing-and-retrieving-the-data/  
+
+
