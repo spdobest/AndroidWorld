@@ -100,4 +100,5 @@
     <string name="rating">Rating</string>
     <string name="logout">Logout</string>
     <string name="back">Back</string>
+    <string name="permdesc_deadlyActivity">Dangerous Custom permission description </string>
 </resources>

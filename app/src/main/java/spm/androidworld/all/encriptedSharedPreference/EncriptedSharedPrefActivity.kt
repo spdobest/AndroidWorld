@@ -1,4 +1,4 @@
-package spm.androidworld.all.security.encriptedSharedPreference
+package spm.androidworld.all.encriptedSharedPreference
 
 import android.content.SharedPreferences
 import android.os.Bundle

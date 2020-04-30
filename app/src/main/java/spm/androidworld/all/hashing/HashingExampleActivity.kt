@@ -1,4 +1,4 @@
-package spm.androidworld.all.security.hashing
+package spm.androidworld.all.hashing
 
 import android.os.Bundle
 import android.text.TextUtils

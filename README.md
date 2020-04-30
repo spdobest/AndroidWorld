@@ -1,5 +1,6 @@
 # ANDROID SECURITY
 https://proandroiddev.com/secure-data-in-android-encryption-in-android-part-1-e5fd150e316f
+https://labs.nettitude.com/tutorials/tls-certificate-pinning-101/
 
 Its contains all the sample code of new and advance concepts in android
 
@@ -68,6 +69,99 @@ If the new hash matches the old hash then let them in, otherwise refuse entry.
 - Having a friend’s public key allows you to encrypt messages to them.
 - Your private key is used to decrypt messages encrypted to you.
 - Intermediaries—such as the email service providers, Internet service providers, and those on their networks—are able to see metadata this whole time: who is sending what to whom, when, what time it’s received, what the subject line is, that the message is encrypted, and so on.
+
+
+## Encrypted Shared Preference
+https://developer.android.com/reference/androidx/security/crypto/EncryptedSharedPreferences
+- Wraps the SharedPreferences class and automatically encrypts keys and values using a two-scheme method:
+    - Keys are encrypted using a deterministic encryption algorithm such that the key can be encrypted and properly looked up.
+    - Values are encrypted using AES-256 GCM and are non-deterministic.
+
+
+## SQL INJECTION
+- https://portswigger.net/web-security/sql-injection
+
+## How to avoid to use your application calsses from another
+- Enforcing permissions via the AndroidManifest.xml file means different things to each of the application component types.
+- This is because of the various inter-process communications ( IPC ) mechanisms that can be used to interact with them.
+- For every application component, the android:permission attribute does the following:
+  - Activity : Limits the application components which are external to your application that can successfully call startActivity or startActivityForResult to those with the required permission
+  - Service : Limits the external application components that can bind (by calling bindService()) or start (by calling startService()) the service to those with the specified permission
+  - Receiver : Limits the number of external application components that can send broadcasted intents to the receiver with the specified permission
+  - Provider : Limits access to data that is made accessible via the content provider
+
+
+## SSL Pinning
+- What SSL ?
+    - It Stands For Secure Socket Layer.
+    - SSL certificate create a foundation of trust by establishing a secure connection.
+    - The connection ensures that all data passed between the web server and web browsers remain private and integral.
+    - SSL certificate have a key pairs
+        - A public key and a private key
+    - These keys work together to establish an encrypted connection.
+    - The certificate also contains what is called the subject which is the identity of the certificate/website owner.
+## How SSL working ??
+- Client Machine sends a connection request to server, server listens the request.
+- Server gives response including public key and certificate.
+- Client checks the certificate and sends a encrypted key/ public key to server.
+- Server decrypt the key and sends encrypted data back to the client machine.
+- Client receives and decrypt that encrypted data.
+
+## What is Pinning?
+- Pinning is an optional mechanism that can be used to improve the security of a service or site that relies on SSL Certificates.
+- Pinning allows you to specify a cryptographic identity that should be accepted by users visiting your site.
+
+## What to pin?
+    - Certificate
+        - Normally the certificate is easiest to pin
+        - At runtime, you retrieve the website or server’s certificate
+        - You compare the retrieved certificate with the certificate embedded within the application
+        - If the site/service rotates its certificate on a regular basis, then your application would need to be updated regularly
+    - Public key
+        - More flexible
+        - A little trickier due to the extra steps necessary to extract the public key from a certificate
+            - Its harder to work with keys since you must extract the key from the certificate – can be somewhat of a pain in Cocoa/CocoaTouch and OpenSSL.
+        - As with a certificate, the program checks the extracted public key with its embedded copy of the public key
+    - Hash
+        - Allows you to anonymize a certificate or public key
+           - this might be important if you application is concerned about leaking information during decompilation and reverse engineering
+        - A digested certificate fingerprint is often available as a native API for many libraries, so its convenient to use
+        - An organization might want to supply a reserve identity in case the primary identity is compromised
+## Where to pin?
+    - The server’s certificate (a.k.a. leaf certificate)
+    - The Certificate Authority’s certificate (a.k.a. root certificate)
+    - An intermediate certificate
+    - The whole certificate chain
+
+## SSL PINNING EXPLAIN
+- There are two major factors in an HTTPS connection
+    - A valid certificate that server presents during handshaking.
+    - A cipher suite to be used for data encryption during transmission.
+- The certificate is the essential component and serves as a proof of identity of the server.
+- The client will only trust the server if the server can provide a valid certificate that is signed by one of the trusted Certificate Authorities that come pre-installed in the client.
+- otherwise, the connection will be aborted.
+
+- Every Device have a list of trusted certificate.
+- If the man in middle can create clone the certificates available in device which the server can easily trust.
+- An attacker/Man In Middle can abuse this mechanism by either install a malicious root CA certificate to user devices so the client will trust all certificates that are signed by the attacker, or even worse, compromised a CA completely.
+- Therefore relying on the certificates received from servers alone cannot guarantee the authenticity of the server, and it is vulnerable to a potential man-in-the-middle attack.
+- SSL Pinning is a technique that we use in the client side to avoid man-in-the-middle attack by validating the server certificates again even after SSL handshaking.
+- The developers embed (or pin) a list of trustful certificates to the client application during development, and use them to compare against the server certificates during runtime.
+- If there is a mismatch between the server and the local copy of certificates, the connection will simply be disrupted, and no further user data will be even sent to that server.
+- This enforcement ensures that the user devices are communicating only to the dedicated trustful servers.
+
+- There is a disadvantage in SSL certificate pinning, because when the server certificate expires.
+- Then server install new SSL certificate. But client is using the same old certificate.
+- That time server is not able to trust the old certificate from client.
+- We can avoid this by using below
+    - Add all the list of certificate in client side which are going to be update in future
+    - Or update your client application with the new certificate.
+- Pin either the whole certificate or its hashed public key.
+- The hashed public key pinning is the preferred approach because the same private key can be used in signing the updated certificate, therefore we can save the trouble of pinning a new hashed public key for a new certificate, and reduce the risk of app ‘bricking’.
+
+
+
+
 
 
 For Secure application's, Its very important to save the sensitive data with high security so that the middle man cant be hack or leak your sensitive data which leads to huge loss.  

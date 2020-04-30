@@ -1,4 +1,4 @@
-package spm.androidworld.all.security.biometricAuth
+package spm.androidworld.all.biometricAuth
 
 import android.Manifest
 import android.app.KeyguardManager

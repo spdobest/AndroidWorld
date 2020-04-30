@@ -6,10 +6,39 @@
 
     <dist:module dist:instant="true" />
 
+    <!--    <permission android:description="string resource"
+                android:icon="drawable resource"
+                android:label="string resource"
+                android:name="string"
+                android:permissionGroup="string"
+                android:protectionLevel=["normal" | "dangerous" |
+        "signature" | ...] />-->
+
+    <permission
+            android:name="spm.androidworld.all.myPermission"
+            android:label="my_permission"
+            android:protectionLevel="dangerous"></permission>
+    <uses-permission android:name="spm.androidworld.all.myPermission" />
+
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true" />
+
+    <uses-feature
+            android:name="android.hardware.bluetooth"
+            android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-sdk
+            android:minSdkVersion="3"
+            android:targetSdkVersion="5" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
             android:allowBackup="true"
@@ -21,12 +50,25 @@
             android:theme="@style/AppTheme"
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
-        <activity android:name=".security.hashing.HashingExampleActivity">
+        <!--    android:permission="spm.androidworld.all.myPermission"   -->
+        <activity
+                android:name=".CustomPermissionActivity"
+                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.testpackage.permissiontestclient.MyAction" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".encryptDecryptFiles.EncryptDecryptFileActivity">
+
+        </activity>
+        <activity android:name=".hashing.HashingExampleActivity">
+
         </activity>
         <activity android:name=".RsaEncryptionActivity">
 
