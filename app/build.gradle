@@ -315,4 +315,8 @@ dependencies {
      * LOCATION
      */
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    // SQL CIPHER
+    implementation 'net.zetetic:android-database-sqlcipher:4.3.0@aar'
+    implementation "androidx.sqlite:sqlite:2.1.0"
 }
