@@ -169,6 +169,9 @@ https://developer.android.com/reference/androidx/security/crypto/EncryptedShared
       - Private keys
       - Public keys + certificates
     - For more details follow - http://tutorials.jenkov.com/java-cryptography/keystore.html   
+- SecretKey
+    - A secret (symmetric) key. 
+    - The purpose of this interface is to group (and provide type safety for) all secret key interfaces.    
 - Key
 - KeySpec
 - KeyPairGenerator
