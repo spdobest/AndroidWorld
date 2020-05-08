@@ -158,6 +158,66 @@ https://developer.android.com/reference/androidx/security/crypto/EncryptedShared
     - Or update your client application with the new certificate.
 - Pin either the whole certificate or its hashed public key.
 - The hashed public key pinning is the preferred approach because the same private key can be used in signing the updated certificate, therefore we can save the trouble of pinning a new hashed public key for a new certificate, and reduce the risk of app ‘bricking’.
+  
+## Key concept of SSL pinning
+- Java KeyStore
+    - The Java KeyStore is a database that can contain keys. A Java KeyStore is represented by the KeyStore (java.security.KeyStore) class.
+    - A KeyStore can be written to disk and read again. 
+    - The KeyStore as a whole can be protected with a password, and each key entry in the KeyStore can be protected with its own password. 
+    - This makes the KeyStore class a useful mechanism to handle encryption keys securely.
+    - A KeyStore can hold the following types of keys:
+      - Private keys
+      - Public keys + certificates
+    - For more details follow - http://tutorials.jenkov.com/java-cryptography/keystore.html   
+- Key
+- KeySpec
+- KeyPairGenerator
+    - The Java KeyPairGenerator class (java.security.KeyPairGenerator) is used to generate asymmetric encryption / decryption key pairs. An asymmetric key pair consists of two keys.
+    - Private Key - The private key is used to encrypt data 
+    - Public key - the public key can be used to decrypt the data again
+    - you could also encrypt data using the public key and decrypt it using the private key.
+    ```
+    // Creating a KeyPairGenerator Instance
+    KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+    // initialization
+    keyPairGenerator.initialize(2048);
+    // Generating a Key Pair
+    KeyPair keyPair = keyPairGenerator.generateKeyPair();
+    ```
+  - For more details visit - http://tutorials.jenkov.com/java-cryptography/keypairgenerator.html
+- KeyPair
+    - The Java KeyPair class (java.security.KeyPair represents an asymmetric key pair. 
+    - In other words, a public key + private key pair. 
+    - A KeyPair instance is typically used when performing asymmetric cryptography, like encrypting or signing data.
+    ```
+        PublicKey publicKey = keyPair.getPublic();
+        PrivateKey privateKey = keyPair.getPrivate();
+    ```  
+- Key Generator
+    - The Java KeyGenerator class (javax.crypto.KeyGenerator) is used to generate symmetric encryption keys.
+    - http://tutorials.jenkov.com/java-cryptography/keygenerator.html  
+- KeyFactory
+- KeyAgreement
+    - This class provides the functionality of a key agreement (or key exchange) protocol.
+    - The keys involved in establishing a shared secret are created by one of the key generators (KeyPairGenerator or KeyGenerator), a KeyFactory, or as a result from an intermediate phase of the key agreement protocol.
+    - For each of the correspondents in the key exchange, doPhase needs to be called. For example, if this key exchange is with one other party, doPhase needs to be called once, with the lastPhase flag set to true. If this key exchange is with two other parties, doPhase needs to be called twice, the first time setting the lastPhase flag to false, and the second time setting it to true. There may be any number of parties involved in a key exchange.
+    - 
+- Private Key
+- Public Key   
+- CryptoSpec
+- Diffi Helman Algorithm
+- Java Signature
+    - The Java Signature class (java.security.Signature) can create a digital signature for binary data. 
+    - A digital signature is a message digest encrypted with a private key of a private / public key pair. 
+    - Anyone in possession of the public key can verify the digital signature.
+    - For more details follow - http://tutorials.jenkov.com/java-cryptography/signature.html
+- MessageDigest
+    - The Java MessageDigest class represents a cryptographic hash function which can calculate a message digest from binary data. 
+    - When you receive some encrypted data you cannot see from the data itself whether it was modified during transportation. 
+    - A message digest can help alleviate that problem.    
+    - For more details - http://tutorials.jenkov.com/java-cryptography/messagedigest.html
+    
+
 
 
 

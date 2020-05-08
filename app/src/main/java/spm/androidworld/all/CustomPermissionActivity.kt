@@ -6,7 +6,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_custom_permission.*
+import spm.androidworld.all.constants.BlankFragment1
+import spm.androidworld.all.constants.BlankFragment2
 
 
 class CustomPermissionActivity : AppCompatActivity(), View.OnClickListener {
@@ -15,23 +16,38 @@ class CustomPermissionActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_custom_permission)
 
-        btnSendWhatsupMessage.setOnClickListener(this)
-        btnOpenWhatsup.setOnClickListener(this)
-        btnOpenOtherActivity.setOnClickListener(this)
+        /* btnSendWhatsupMessage.setOnClickListener(this)
+         btnOpenWhatsup.setOnClickListener(this)
+         btnOpenOtherActivity.setOnClickListener(this)*/
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.container, BlankFragment1(), "BlankFragment1")
+            .addToBackStack("BlankFragment1")
+            .commit()
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.container, BlankFragment2(), "BlankFragment2")
+            .addToBackStack("BlankFragment2")
+            .commit()
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 
     override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.btnSendWhatsupMessage -> {
-                sendWhatsapp("Hello...")
-            }
-            R.id.btnOpenWhatsup -> {
-                openFaceWithNumber("+919768235871")
-            }
-            R.id.btnOpenOtherActivity -> {
-                launchAnotherActivity()
-            }
-        }
+        /* when (v?.id) {
+             R.id.btnSendWhatsupMessage -> {
+                 sendWhatsapp("Hello...")
+             }
+             R.id.btnOpenWhatsup -> {
+                 openFaceWithNumber("+919768235871")
+             }
+             R.id.btnOpenOtherActivity -> {
+                 launchAnotherActivity()
+             }
+         }*/
     }
 
     private fun openFaceWithNumber(num: String) {
