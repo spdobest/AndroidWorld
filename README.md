@@ -100,39 +100,41 @@ https://developer.android.com/reference/androidx/security/crypto/EncryptedShared
         - A public key and a private key
     - These keys work together to establish an encrypted connection.
     - The certificate also contains what is called the subject which is the identity of the certificate/website owner.
-## How SSL working ??
+## How SSL working ?
 - Client Machine sends a connection request to server, server listens the request.
 - Server gives response including public key and certificate.
 - Client checks the certificate and sends a encrypted key/ public key to server.
 - Server decrypt the key and sends encrypted data back to the client machine.
 - Client receives and decrypt that encrypted data.
 
-## What is Pinning?
+## What is Pinning ?
 - Pinning is an optional mechanism that can be used to improve the security of a service or site that relies on SSL Certificates.
 - Pinning allows you to specify a cryptographic identity that should be accepted by users visiting your site.
 
-## What to pin?
-    - Certificate
-        - Normally the certificate is easiest to pin
-        - At runtime, you retrieve the website or server’s certificate
-        - You compare the retrieved certificate with the certificate embedded within the application
-        - If the site/service rotates its certificate on a regular basis, then your application would need to be updated regularly
-    - Public key
-        - More flexible
-        - A little trickier due to the extra steps necessary to extract the public key from a certificate
-            - Its harder to work with keys since you must extract the key from the certificate – can be somewhat of a pain in Cocoa/CocoaTouch and OpenSSL.
-        - As with a certificate, the program checks the extracted public key with its embedded copy of the public key
-    - Hash
-        - Allows you to anonymize a certificate or public key
-           - this might be important if you application is concerned about leaking information during decompilation and reverse engineering
-        - A digested certificate fingerprint is often available as a native API for many libraries, so its convenient to use
-        - An organization might want to supply a reserve identity in case the primary identity is compromised
-## Where to pin?
-    - The server’s certificate (a.k.a. leaf certificate)
-    - The Certificate Authority’s certificate (a.k.a. root certificate)
-    - An intermediate certificate
-    - The whole certificate chain
-
+## What to pin ?
+- Certificate
+    - Normally the certificate is easiest to pin
+    - At runtime, you retrieve the website or server’s certificate
+    - You compare the retrieved certificate with the certificate embedded within the application
+    - If the site/service rotates its certificate on a regular basis, then your application would need to be updated regularly
+    - This is one of the biggest disadvantage of Certificate Pinning. Whenever there is a change in certificate, then the application need to be update with new embeded certificate.
+    - Otherwise need to embed all the certificates which is going to use in future in server side.
+- Public Key
+    - More flexible
+    - A little trickier due to the extra steps necessary to extract the public key from a certificate
+    - Its harder to work with keys since you must extract the key from the certificate – can be somewhat of a pain in Cocoa/CocoaTouch and OpenSSL.
+    - As with a certificate, the program checks the extracted public key with its embedded copy of the public key
+- Hash
+    - Allows you to anonymize a certificate or public key
+    - this might be important if you application is concerned about leaking information during decompilation and reverse engineering
+    - A digested certificate fingerprint is often available as a native API for many libraries, so its convenient to use
+    - An organization might want to supply a reserve identity in case the primary identity is compromised
+## Where to pin ?
+- The server’s certificate (a.k.a. leaf certificate)
+- The Certificate Authority’s certificate (a.k.a. root certificate)
+- An intermediate certificate
+- The whole certificate chain
+  
 ## SSL PINNING EXPLAIN
 - There are two major factors in an HTTPS connection
     - A valid certificate that server presents during handshaking.
@@ -220,8 +222,10 @@ https://developer.android.com/reference/androidx/security/crypto/EncryptedShared
     - A message digest can help alleviate that problem.    
     - For more details - http://tutorials.jenkov.com/java-cryptography/messagedigest.html
     
-
-
+## Diffie-Hellman Key Exchange
+- https://www.youtube.com/watch?v=YEBfamv-_do&t=362s
+- https://www.youtube.com/watch?v=cM4mNVUBtHk
+- https://www.youtube.com/watch?v=zLKT4-uRGw4
 
 
 
