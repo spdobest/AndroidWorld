@@ -173,4 +173,5 @@ dependencies {
     implementation koin.koinAndroid
     implementation koin.koinScope
     implementation koin.koinViewModel
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

@@ -1,4 +1,14 @@
-# AndroidWorld
+# Android Architecture Design Pattern
+## Here below things are covered.
+- MVP
+- MVVM
+- MVVM with Data Binding
+- Clean Architecture
+- MVI 
+- Implemented Coroutines for API calls
+- Retrofit network call
+- Koin - **A Dependency Injection**
+- 
 - APIS implemented from https://developers.themoviedb.org/3/getting-started/introduction
 
 
