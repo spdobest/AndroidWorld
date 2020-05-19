@@ -5,14 +5,13 @@
         package="spm.androidworld.all">
 
     <dist:module dist:instant="true" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-            android:allowBackup="true"
+            android:allowBackup="false"
             android:debuggable="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -21,26 +20,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
-        <activity android:name=".location.CurrentLocationActivity">
 
-        </activity>
-        <activity android:name=".android_o.NFeatureActivity" />
-        <activity android:name=".android_p.PFeatureActivity" />
-        <activity android:name=".android_q.QFeatureActivity" />
-        <activity android:name=".fcm.FcmActivity" />
-        <activity android:name=".navigation.NavigationActivity">
 
-        </activity>
-        <activity android:name=".navigation.welcome.WelcomeMeActivity" />
-        <activity android:name=".saveApplicationState.SaveSateOfActivity" />
-        <activity android:name=".communicationWithWebview.MyWebViewActivity" />
-        <activity android:name=".security.biometricAuth.BiometricAuthActivity" />
-        <activity android:name=".security.encriptedSharedPreference.EncriptedSharedPrefActivity" />
-        <activity android:name=".activitylifecycle.LifecycleActivity" />
-        <activity android:name=".launchmode.LuncherActivityB" />
-        <activity android:name=".launchmode.LuncherActivityA" />
-        <activity android:name=".testing.TestingActivity" />
-        <activity android:name=".security.SecurityActivity" />
         <activity android:name=".MainActivity" />
         <activity
                 android:name=".base.use.SecondaryActivity"

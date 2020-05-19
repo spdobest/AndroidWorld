@@ -1,4 +1,4 @@
-package com.android.assignment.base
+package spm.androidworld.all.base
 
 import android.content.Context
 import android.graphics.Color
@@ -13,7 +13,6 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.dialogfragment_base.*
 import spm.androidworld.all.R
-import spm.androidworld.all.base.BaseActivity
 import spm.androidworld.all.utility.LogUtil
 
 
