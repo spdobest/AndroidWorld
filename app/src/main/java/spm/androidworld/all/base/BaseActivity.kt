@@ -22,7 +22,6 @@ import spm.androidworld.all.R
 import spm.androidworld.all.utility.ImageUtil
 import spm.androidworld.all.utility.LogUtil
 
-
 abstract class BaseActivity : AppCompatActivity(), BaseInterface, BaseFragment.ToolbarListener {
 
     private var isSecondaryActivity = false

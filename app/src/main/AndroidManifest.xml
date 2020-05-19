@@ -5,6 +5,7 @@
         package="spm.androidworld.all">
 
     <dist:module dist:instant="true" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
@@ -20,8 +21,11 @@
             android:theme="@style/AppTheme"
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
-
-
+        <activity android:name=".mvvmWithDataBinding.MvvmDataBindingActivity"></activity>
+        <activity android:name=".mvvmArchitecture.MvvmActivity" />
+        <activity android:name=".mvpArchitecture.MvpActivity" />
+        <activity android:name=".mviArchitecture.MviActivity" />
+        <activity android:name=".cleanArchitecture.CleanArchitectureActivity" />
         <activity android:name=".MainActivity" />
         <activity
                 android:name=".base.use.SecondaryActivity"

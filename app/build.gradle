@@ -27,7 +27,6 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-
         // Creates a property for the FileProvider authority.
         def filesAuthorityValue = applicationId + ".files"
         // Creates a placeholder property to use in the manifest.
@@ -150,11 +149,11 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.1.0-alpha10'
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.google.android.material:material:1.1.0-alpha10'
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
 
     /**
      * RETROFIT 2
@@ -164,4 +163,14 @@ dependencies {
     implementation extLibraries.retrofitRxAdapter
     implementation extLibraries.okhttp3
     implementation extLibraries.okhttp3Interceptor
+
+    /**
+     * KOIN
+     */
+    implementation koin.koinCore
+    implementation koin.koinExt
+    implementation koin.koinJava
+    implementation koin.koinAndroid
+    implementation koin.koinScope
+    implementation koin.koinViewModel
 }
