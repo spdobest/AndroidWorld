@@ -84,8 +84,6 @@ abstract class BaseDialogFragment : DialogFragment() {
         mViewDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
         inflater.inflate(getLayoutId(), container_dialogfragment)
         return mViewDataBinding?.root */
-
-
     }
 
     override fun onDestroy() {
