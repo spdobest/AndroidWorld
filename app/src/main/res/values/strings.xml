@@ -1,18 +1,12 @@
 <resources>
     <string name="app_name">AndroidWorld</string>
-
-    <!--MOVIEDBAPI KEY-->
-    <string name="moviedb_api_key">b7eb389e9e6ad5e434077e4b6d83ad78</string>
-    <string name="moviedb_url">https://api.themoviedb.org/3/movie/550?api_key=b7eb389e9e6ad5e434077e4b6d83ad78</string>
-    <string name="moviedb_readaccess_token">
-        eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiN2ViMzg5ZTllNmFkNWU0MzQwNzdlNGI2ZDgzYWQ3OCIsInN1YiI6IjVhOTI5YWQ5MGUwYTI2MTZjMzAxY2IyOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WK8z4ipmqtQUKpsGQi2wCwBrcFow0Lq5nxi-ANNvzAY
-    </string>
-    <string name="name">Name</string>
+    <string name="swipe">Swipe</string>
+    <string name="volume">Volume</string>
+    <string name="power">Power</string>
+    <string name="scroll">Scroll</string>
+    <string name="title_activity_login">Login</string>
+    <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="save">Save</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hello_stranger">Hello Stranger</string>
+    <string name="action_sign_in">Sign In</string>
 
 </resources>

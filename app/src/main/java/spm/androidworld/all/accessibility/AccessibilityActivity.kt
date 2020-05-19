@@ -1,16 +1,13 @@
-package spm.androidworld.all.dagger2
+package spm.androidworld.all.accessibility
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import spm.androidworld.all.R
 
-/**
- * https://github.com/anitaa1990/TrailersApp
- */
-class Dagger2Activity : AppCompatActivity() {
+class AccessibilityActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dagger2)
+        setContentView(R.layout.activity_accessibility)
     }
 }

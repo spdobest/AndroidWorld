@@ -21,7 +21,13 @@
             android:theme="@style/AppTheme"
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
-        <activity android:name=".location.CurrentLocationActivity">
+        <activity
+                android:name=".accessibility.ui.login.LoginActivity"
+                android:label="@string/title_activity_login">
+
+        </activity>
+
+        <activity android:name=".accessibility.AccessibilityActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -29,25 +35,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".android_o.NFeatureActivity" />
-        <activity android:name=".android_p.PFeatureActivity" />
-        <activity android:name=".android_q.QFeatureActivity" />
-        <activity android:name=".fcm.FcmActivity" />
-        <activity android:name=".navigation.NavigationActivity">
+
+        <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".navigation.welcome.WelcomeMeActivity" />
-        <activity android:name=".saveApplicationState.SaveSateOfActivity" />
-        <activity android:name=".dagger2.Dagger2Activity" />
-        <activity android:name=".communicationWithWebview.MyWebViewActivity" />
-        <activity android:name=".security.biometricAuth.BiometricAuthActivity" />
-        <activity android:name=".security.encriptedSharedPreference.EncriptedSharedPrefActivity" />
-        <activity android:name=".activitylifecycle.LifecycleActivity" />
-        <activity android:name=".launchmode.LuncherActivityB" />
-        <activity android:name=".launchmode.LuncherActivityA" />
-        <activity android:name=".testing.TestingActivity" />
-        <activity android:name=".security.SecurityActivity" />
-        <activity android:name=".MainActivity" />
+
+        <service
+                android:name=".accessibility.services.GlobalActionBarService"
+                android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.accessibilityservice"
+                    android:resource="@xml/global_action_bar_service" />
+        </service>
     </application>
 
 </manifest>
