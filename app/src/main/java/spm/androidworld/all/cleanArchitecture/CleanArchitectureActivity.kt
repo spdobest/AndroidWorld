@@ -9,5 +9,7 @@ class CleanArchitectureActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_clean_architecture)
+
+        title = "Clean Architecture Flow"
     }
 }

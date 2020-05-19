@@ -1,7 +1,11 @@
 # AndroidWorld
-Its contains all the sample code of new and advance concepts in android
-  
-# [Click here for Security in android](https://github.com/spdobest/AndroidWorld/blob/master/Security.md)  
-# [Click here for Solid Principle and Design Architecture](https://github.com/spdobest/AndroidWorld/blob/master/PRINCIPLES_ARCHITECTURE.md)   
+- APIS implemented from https://developers.themoviedb.org/3/getting-started/introduction
 
 
+## IMplement below APIS's
+- Popular = https://api.themoviedb.org/3/movie/popular?api_key=b7eb389e9e6ad5e434077e4b6d83ad78&language=en-US&page=1
+- TopRated = https://api.themoviedb.org/3/movie/top_rated?api_key=b7eb389e9e6ad5e434077e4b6d83ad78&language=en-US&page=1
+- UpComming - https://api.themoviedb.org/3/movie/upcoming?api_key=b7eb389e9e6ad5e434077e4b6d83ad78&language=en-US&page=1
+- Rate A Movie : https://developers.themoviedb.org/3/movies/rate-movie
+- Delete Rating : https://developers.themoviedb.org/3/movies/delete-movie-rating
+   

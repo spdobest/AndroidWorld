@@ -21,21 +21,28 @@
             android:theme="@style/AppTheme"
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
-        <activity android:name=".mvvmWithDataBinding.MvvmDataBindingActivity"></activity>
-        <activity android:name=".mvvmArchitecture.MvvmActivity" />
-        <activity android:name=".mvpArchitecture.MvpActivity" />
-        <activity android:name=".mviArchitecture.MviActivity" />
-        <activity android:name=".cleanArchitecture.CleanArchitectureActivity" />
-        <activity android:name=".MainActivity" />
-        <activity
-                android:name=".base.use.SecondaryActivity"
-                android:theme="@style/AppTheme.NoActionBar1">
+
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".mvvmWithDataBinding.MvvmDataBindingActivity">
+
+        </activity>
+        <activity android:name=".mvvmArchitecture.MvvmActivity" />
+        <activity android:name=".mvpArchitecture.MvpActivity" />
+        <activity android:name=".mviArchitecture.MviActivity" />
+        <activity android:name=".cleanArchitecture.CleanArchitectureActivity" />
+
+        <activity
+                android:name=".base.use.SecondaryActivity"
+                android:theme="@style/AppTheme.NoActionBar1">
+
         </activity>
     </application>
 
