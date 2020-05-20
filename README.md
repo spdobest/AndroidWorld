@@ -1,7 +1,6 @@
-# AndroidWorld
-Its contains all the sample code of new and advance concepts in android
+# Android Network Call 
+- Simple Http Network call
+- Volley
+- Retrofit
   
-# [Click here for Security in android](https://github.com/spdobest/AndroidWorld/blob/master/Security.md)  
-# [Click here for Solid Principle and Design Architecture](https://github.com/spdobest/AndroidWorld/blob/master/PRINCIPLES_ARCHITECTURE.md)   
-
-
+## We will define the Speed, cache mechanism in all the 3 library  
