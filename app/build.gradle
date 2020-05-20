@@ -40,6 +40,13 @@ android {
 
     }
 
+    /**
+     * DATA BINDING
+     */
+    dataBinding {
+        enabled = true
+    }
+
     signingConfigs {
         // Creates a signing configuration called "release".
 
@@ -164,4 +171,78 @@ dependencies {
     implementation extLibraries.retrofitRxAdapter
     implementation extLibraries.okhttp3
     implementation extLibraries.okhttp3Interceptor
+
+    /**
+     * Benchmark
+     */
+    androidTestImplementation "androidx.benchmark:benchmark-junit4:1.0.0"
+
+    /**
+     * Camera X
+     */
+    def camerax_version = "1.0.0-beta03"
+    // CameraX core library using camera2 implementation
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+    // CameraX Lifecycle Library
+    implementation "androidx.camera:camera-lifecycle:$camerax_version"
+    // CameraX View class
+    implementation "androidx.camera:camera-view:1.0.0-alpha10"
+
+    /**
+     * Navigation Graph
+     */
+    def nav_version = "2.3.0-alpha06"
+
+    // Java language implementation
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Dynamic Feature Module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // Testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    /**
+     * Workmanager
+     */
+    def work_version = "2.3.4"
+
+    // (Java only)
+    implementation "androidx.work:work-runtime:$work_version"
+
+    // Kotlin + coroutines
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+    // optional - RxJava2 support
+    implementation "androidx.work:work-rxjava2:$work_version"
+
+    // optional - GCMNetworkManager support
+    implementation "androidx.work:work-gcm:$work_version"
+
+    // optional - Test helpers
+    androidTestImplementation "androidx.work:work-testing:$work_version"
+
+    /**
+     * ViewPager 2
+     */
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    /**
+     * Paging Library
+     */
+    def paging_version = "2.1.2"
+
+    implementation "androidx.paging:paging-runtime:$paging_version" // For Kotlin use paging-runtime-ktx
+
+    // alternatively - without Android dependencies for testing
+    testImplementation "androidx.paging:paging-common:$paging_version" // For Kotlin use paging-common-ktx
+
+    // optional - RxJava support
+    implementation "androidx.paging:paging-rxjava2:$paging_version" // For Kotlin use paging-rxjava2-ktx
+
+
 }
