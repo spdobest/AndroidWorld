@@ -1,4 +1,4 @@
-package com.android.assignment.network
+package spm.androidworld.all.network
 
 import com.android.assignment.network.model.WeatherResponse
 import io.reactivex.Observable
