@@ -1,4 +1,4 @@
-package com.android.assignment.network
+package spm.androidworld.all.network
 
 interface ResponseCallBack<S> {
     fun onSuccess(value: S)

@@ -1,4 +1,4 @@
-package com.android.assignment.network.model
+package spm.androidworld.all.network.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

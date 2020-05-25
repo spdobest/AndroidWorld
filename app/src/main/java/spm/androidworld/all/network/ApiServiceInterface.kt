@@ -1,6 +1,5 @@
 package spm.androidworld.all.network
 
-import com.android.assignment.network.model.WeatherResponse
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -9,6 +8,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
+import spm.androidworld.all.network.model.WeatherResponse
 
 /**
  * The interface which provides methods to get result of webservices
