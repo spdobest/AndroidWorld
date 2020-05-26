@@ -16,10 +16,7 @@
     okHttp3Version = "3.11.0"
     glideVersion = "4.9.0"
 
-    junit4Version = "4.12"
-    testRunnerVersion = "1.0.2"
-    mockKVersion = "1.8.13.kotlin13"
-    espressoVersion = "3.0.2"
+
 
     androidXKtx = '1.0.2'
     coreKtx = '1.2.0'
@@ -39,6 +36,17 @@
     swipeRefreshLayout_version = '1.0.0'
     rxJava_version = '2.2.9'
     rxAndroid_version = '2.1.0'
+    coroutines_android_version = '1.3.0'
+    livedata_version = '2.2.0-rc02'
+     work_version = '2.2.0'
+
+     // testing Version
+     junit_version = '4.12'
+     testRunnerVersion = "1.0.2"
+     mockKVersion = "1.8.13.kotlin13"
+     truth_version = '1.0'
+     expresso_version = '3.2.0'
+     androidx_test_version = '1.2.0'
 
     libraries = [
             appCompat            : "androidx.appcompat:appcompat:" + androidXVersion,
@@ -67,7 +75,15 @@
              ktxCore              : "androidx.core:core-ktx:"+coreKtx,
              ktxActivity          : "androidx.activity:activity-ktx:1.0.0",
              ktxCollection        : "androidx.collection:collection-ktx:1.1.0",
-             androidX             : "androidx.core:core-ktx:"+androidXKtx
+             androidX             : "androidx.core:core-ktx:"+androidXKtx,
+             // ViewModel and LiveData
+             ktxLivedata          : "androidx.lifecycle:lifecycle-livedata-ktx:$livedata_version",
+             ktxViewmodel         : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+     ]
+
+     kotlinLibs = [
+             coroutinesCore       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_android_version",
+             coroutineAndroid     : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutines_android_version}"
      ]
 
      extLibraries = [
@@ -158,16 +174,27 @@
      ]
 
     testLibraries = [
-            junit4   : "junit:junit:" + junit4Version,
-            mockK    : "io.mockk:mockk:" + mockKVersion,
-            rxKotlin : libraries.rxKotlin,
-            rxAndroid: libraries.rxAndroid
+            junit4        : "junit:junit:" + junit_version,
+            mockK         : "io.mockk:mockk:" + mockKVersion,
+            mockito       : "org.mockito:mockito-core:2.23.0",
+            coroutineTest : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_android_version",
+            archTest      : "androidx.arch.core:core-testing:$lifecycle_version",
+            googleTruth   : "com.google.truth:truth:$truth_version",
     ]
 
-    androidTestLibraries = [
-            testRunner: "com.android.support.test:runner:" + testRunnerVersion,
-            testRules : "com.android.support.test:rules:" + testRunnerVersion,
-            espresso  : "com.android.support.test.espresso:espresso-core:" + espressoVersion,
-            mockK     : "io.mockk:mockk-android:" + mockKVersion
-    ]
+     androidTestLibraries = [
+             "junit:junit:$junit_version",
+             "androidx.test:runner:$androidx_test_version",
+             "androidx.test:rules:$androidx_test_version",
+
+             // Espresso
+             "androidx.test.espresso:espresso-core:$expresso_version",
+             "androidx.test.espresso:espresso-contrib:$expresso_version",
+             "androidx.test.espresso:espresso-intents:$expresso_version",
+
+             //  Architecture Components testing libraries
+             "androidx.arch.core:core-testing:$lifecycle_version",
+             "androidx.work:work-testing:$work_version",
+     ]
+
 }
