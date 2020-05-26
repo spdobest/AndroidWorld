@@ -163,11 +163,23 @@ dependencies {
     kapt 'com.google.dagger:dagger-android-processor:2.24'
     kapt 'com.google.dagger:dagger-compiler:2.24'
 
+
     /**
      * RETROFIT 2
      */
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation extLibraries.retrofit
+    implementation extLibraries.retrofitGsonConverter
+    implementation extLibraries.retrofitRxAdapter
+    implementation extLibraries.okhttp3
+    implementation extLibraries.okhttp3Interceptor
+    implementation rx.rxJava
+    implementation rx.rxAndroid
+    implementation extLibraries.retrofitRxAdapter
+    implementation  ('com.squareup.retrofit2:converter-simplexml:2.3.0') {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
 
     /**
      * ********************************JETPACK********************************
