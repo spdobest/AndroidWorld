@@ -175,7 +175,7 @@ dependencies {
     implementation rx.rxJava
     implementation rx.rxAndroid
     implementation extLibraries.retrofitRxAdapter
-    implementation  ('com.squareup.retrofit2:converter-simplexml:2.3.0') {
+    implementation('com.squareup.retrofit2:converter-simplexml:2.3.0') {
         exclude group: 'xpp3', module: 'xpp3'
         exclude group: 'stax', module: 'stax-api'
         exclude group: 'stax', module: 'stax'
@@ -269,9 +269,7 @@ dependencies {
     /* implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
     */
-    // Kotlin
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_dep"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_dep"
+
     /**
      * FUTURE
      */
@@ -290,24 +288,17 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    /**
-     * ANDROID SECURITY
-     */
-    def security_version = "1.0.0-alpha02"
-    implementation "androidx.security:security-crypto:$security_version"
 
-    /**
-     * BIOMETRIC
-     */
-    implementation 'androidx.biometric:biometric:1.0.0-alpha04'
-    /**
-     * NAVIGATION
-     */
-    // Kotlin
-    implementation "androidx.navigation:navigation-fragment-ktx:2.1.0"
-    implementation "androidx.navigation:navigation-ui-ktx:2.1.0"
     /**
      * LOCATION
      */
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    /**
+     * NavigationGraph
+     */
+    implementation jetpackLibraries.navFragment
+    implementation jetpackLibraries.navUi
+    implementation jetpackLibraries.navFragmentKotlin
+    implementation jetpackLibraries.navUiKotlin
 }

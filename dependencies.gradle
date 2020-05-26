@@ -47,6 +47,7 @@ ext {
     truth_version = '1.0'
     expresso_version = '3.2.0'
     androidx_test_version = '1.2.0'
+    nav_version = "2.1.0"
 
     libraries = [
             appCompat            : "androidx.appcompat:appcompat:" + androidXVersion,
@@ -130,6 +131,15 @@ ext {
             koinScope : "org.koin:koin-androidx-scope:2.0.1",
             // koin viewmodel
             koinViewModel : "org.koin:koin-androidx-viewmodel:2.0.1"
+    ]
+
+    jetpackLibraries = [
+    // Java
+    navFragment         :   "androidx.navigation:navigation-fragment:$nav_version",
+    navUi               :   "androidx.navigation:navigation-ui:$nav_version",
+    // Kotlin
+    navFragmentKotlin   :   "androidx.navigation:navigation-fragment-ktx:$nav_version",
+    navUiKotlin         :   "androidx.navigation:navigation-ui-ktx:$nav_version"
     ]
 
     firebase = [

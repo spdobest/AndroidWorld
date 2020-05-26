@@ -15,6 +15,7 @@ import spm.androidworld.all.xmlParsing.model.ObjStationData
 import spm.androidworld.all.xmlParsing.model.StationObjectResponse
 
 
+// http://api.irishrail.ie/realtime/realtime.asmx
 class XmlParseActivity : AppCompatActivity() {
 
     val list = ArrayList<ObjStationData>()
@@ -37,7 +38,8 @@ class XmlParseActivity : AppCompatActivity() {
 
     fun getXmlData() {
 
-        val call: Call<StationObjectResponse?>? = ApiServiceInterface.createXmlRetrofit().getXml()
+        val call: Call<StationObjectResponse?>? =
+            ApiServiceInterface.createXmlRetrofit().getALlStations()
         call?.enqueue(object : Callback<StationObjectResponse?> {
             override fun onFailure(call: Call<StationObjectResponse?>, t: Throwable) {
                 Log.i("TAG", "Failed")

@@ -28,7 +28,11 @@ interface ApiServiceInterface {
      */
     @Headers(*arrayOf("Accept: application/json"))
     @GET("getAllStationsXML")
-    open fun getXml(): Call<StationObjectResponse?>?
+    open fun getALlStations(): Call<StationObjectResponse?>?
+
+    @Headers(*arrayOf("Accept: application/json"))
+    @GET("getCurrentTrainsXML")
+    open fun getAllCurrentTrains(): Call<StationObjectResponse?>?
 
 
     companion object Factory {
