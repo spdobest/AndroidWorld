@@ -12,11 +12,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.Query
 import spm.androidworld.all.network.model.MovieResponse
 import spm.androidworld.all.network.model.WeatherResponse
-import spm.androidworld.all.xmlParsing.StationObjectResponse
 
 /**
  * The interface which provides methods to get result of webservices
@@ -31,12 +29,6 @@ interface ApiServiceInterface {
     @GET("/trending/all/day?api_key=b7eb389e9e6ad5e434077e4b6d83ad78")
     fun getTrendingMovies(): MovieResponse
 
-    /**
-     * XML parsing
-     */
-    @Headers(*arrayOf("Accept: application/json"))
-    @GET("getAllStationsXML")
-    open fun getXml(): Call<StationObjectResponse?>?
 
     @GET("forecast")
     fun getWeatherDetails(@Query("q") action: String, @Query("APPID") appid: String): Call<WeatherResponse>
