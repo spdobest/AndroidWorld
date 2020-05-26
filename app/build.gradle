@@ -70,6 +70,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "boolean", "isDebugable", "false"
+            buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3\""
         }
 
         debug {
@@ -77,6 +78,7 @@ android {
             minifyEnabled false
             buildConfigField "boolean", "isDebugable", "true"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3\""
         }
 
         /**
@@ -159,6 +161,14 @@ dependencies {
     implementation extLibraries.retrofitRxAdapter
     implementation extLibraries.okhttp3
     implementation extLibraries.okhttp3Interceptor
+    implementation rx.rxJava
+    implementation rx.rxAndroid
+    implementation extLibraries.retrofitRxAdapter
+    implementation  ('com.squareup.retrofit2:converter-simplexml:2.3.0') {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
 
     /**
      * ROOM database
@@ -175,7 +185,6 @@ dependencies {
     implementation lifeCycleLibs.liveDataNew
     annotationProcessor lifeCycleLibs.lifecycleAnnotation
     implementation lifeCycleLibs.lifecycleExtension
-
 
 
 }

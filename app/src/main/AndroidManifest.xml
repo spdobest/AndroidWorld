@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+            android:usesCleartextTraffic="true"
             android:allowBackup="false"
             android:debuggable="true"
             android:icon="@mipmap/ic_launcher"
@@ -21,17 +22,21 @@
             android:theme="@style/AppTheme"
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
-        <activity android:name=".coroutines.CoroutinesActivity"></activity>
-        <activity android:name=".MainActivity" />
-        <activity
-                android:name=".base.use.SecondaryActivity"
-                android:theme="@style/AppTheme.NoActionBar1">
+        <activity android:name=".xmlParsing.XmlParseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".coroutines.CoroutinesActivity" />
+        <activity android:name=".MainActivity" />
+        <activity
+                android:name=".base.use.SecondaryActivity"
+                android:theme="@style/AppTheme.NoActionBar1">
+
         </activity>
     </application>
 
