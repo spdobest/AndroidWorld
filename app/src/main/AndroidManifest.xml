@@ -21,6 +21,9 @@
             android:theme="@style/AppTheme"
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
+        <activity android:name=".backgroundServices.BackgroundActivity"></activity>
+        <activity android:name=".broadcastReceiver.BroadcastActivity" />
+        <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".location.CurrentLocationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -29,24 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".android_o.NFeatureActivity" />
-        <activity android:name=".android_p.PFeatureActivity" />
-        <activity android:name=".android_q.QFeatureActivity" />
         <activity android:name=".fcm.FcmActivity" />
-        <activity android:name=".navigation.NavigationActivity">
-
-        </activity>
-        <activity android:name=".navigation.welcome.WelcomeMeActivity" />
-        <activity android:name=".saveApplicationState.SaveSateOfActivity" />
-        <activity android:name=".dagger2.Dagger2Activity" />
-        <activity android:name=".communicationWithWebview.MyWebViewActivity" />
-        <activity android:name=".security.biometricAuth.BiometricAuthActivity" />
-        <activity android:name=".security.encriptedSharedPreference.EncriptedSharedPrefActivity" />
-        <activity android:name=".activitylifecycle.LifecycleActivity" />
-        <activity android:name=".launchmode.LuncherActivityB" />
-        <activity android:name=".launchmode.LuncherActivityA" />
-        <activity android:name=".testing.TestingActivity" />
-        <activity android:name=".security.SecurityActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

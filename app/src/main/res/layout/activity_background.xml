@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:padding="@dimen/dimen_10dp"
+        android:layout_height="match_parent"
+        tools:context="spm.androidworld.all.backgroundServices.BackgroundActivity">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNormalService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Normal Service"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnIntentService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Intent Service"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/btnNormalService" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBindedService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Binded Service"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/btnIntentService" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnJobService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Job Service"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/btnBindedService" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnServicesForOreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Services For Oreo"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/btnJobService" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

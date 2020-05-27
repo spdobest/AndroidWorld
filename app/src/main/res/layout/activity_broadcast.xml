@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dimen_10dp"
+        tools:context="spm.androidworld.all.broadcastReceiver.BroadcastActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNormalBroadcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Normal Broadcast"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOrderedBroadcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Ordered Broadcast"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/btnNormalBroadcast" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLocalBroadcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Local Broadcast Manager"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/btnOrderedBroadcast" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStickyBroadcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Sticky Broadcast"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/btnLocalBroadcast" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBroadcastWithParmission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Sending Broadcast With Permission"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/btnStickyBroadcast" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
