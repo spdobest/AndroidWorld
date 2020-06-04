@@ -14,7 +14,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.android.assignment.base.BaseInterface
 import com.google.android.material.navigation.NavigationView
 import com.heyyy.main.utility.AppConstant
 import kotlinx.android.synthetic.main.activity_base.*

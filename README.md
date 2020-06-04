@@ -20,7 +20,7 @@
 - Delete Rating : https://developers.themoviedb.org/3/movies/delete-movie-rating
   
 ## MVC - MVP - MVVM - MVI - VIPER Comparison
-# MVC_MVP_MVVM
+## MVC_MVP_MVVM
 This repository explains the use of MVC,MVP and MVVM design pattern. It will also explains where to use the Design patterns and where not. it will differentiate the three Design pattern.It will also show the data flow diagram of each design pattern.
 
 ## MVC
@@ -268,7 +268,31 @@ ViewModel class can be just a POJO. What is the motivation for extending from th
 2)Another motivation is easier communications between fragments, in stead of relying on the hosting Activity passing the communications.  
 Works pretty well with LiveData, an observable data holder.  
 You can use RxJava instead of LiveData.  
-AsyncTask is now safe to be used in a ViewModel!  
+AsyncTask is now safe to be used in a ViewModel!
+
+## MVI (Model-ViewIntent)
+- Important Links
+    - http://hannesdorfmann.com/android/mosby3-mvi-1
+    -
+- MVI uses reactive programming to build Android apps.
+- Here are the details use of each module in MVI.
+- Models in MVI represent a state of an app.
+- MVI provides a unidirectional and cyclical data flow.
+- A state represents how an app behaves or reacts at any given moment such when loading screen or displaying new data in a list or a network error.
+- **Model**
+    - represents a state. Models in MVI should be immutable to ensure a unidirectional data flow between them and the other layers in your architecture.
+- **View**
+    - Like in MVP, Interfaces in MVI represent Views, which are then implemented in one or more Activities or Fragments.
+- **Intent**
+    - Intent represents an intention or a desire to perform an action, either by the user or the app itself. For every action, a View receives an Intent. The Presenter observes the Intent, and Models translate it into a new state.
+
+## Advantage of MVI
+- Multiple inputs: In MVP and MVVM, the Presenter and the ViewModel often end up with a large number of inputs and outputs to manage. This is problematic in big apps with many background tasks.
+- Multiple states: In MVP and MVVM, the business logic and the Views may have different states at any point. Developers often synchronize the state with Observable and Observer callbacks, but this may lead to conflicting behavior.
+- To solve the above issue, in MVI , the **Model** represents state rather than data.
+
+
+
   
   
   

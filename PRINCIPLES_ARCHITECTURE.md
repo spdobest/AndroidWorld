@@ -1,4 +1,8 @@
 # This will explain the below concepts  
+
+https://github.com/android10/Android-CleanArchitecture
+
+
 **1. SOLID Principle**   
 **2. Clean Architecture**  
 **3. Functional Design Pattern**  

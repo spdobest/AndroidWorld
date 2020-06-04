@@ -1,11 +1,10 @@
-package spm.androidworld.all.mvvmArchitecture
+package spm.androidworld.all.mvvmArchitecture.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import spm.androidworld.all.R
 
 class MvvmActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mvvm)

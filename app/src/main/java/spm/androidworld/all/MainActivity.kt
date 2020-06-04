@@ -8,8 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import spm.androidworld.all.cleanArchitecture.CleanArchitectureActivity
 import spm.androidworld.all.mviArchitecture.MviActivity
 import spm.androidworld.all.mvpArchitecture.MvpActivity
-import spm.androidworld.all.mvvmArchitecture.MvvmActivity
-import spm.androidworld.all.mvvmWithDataBinding.MvvmDataBindingActivity
+import spm.androidworld.all.mvvmWithDataBinding.ui.account.MvvmAccountActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -32,10 +31,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(Intent(this, MvpActivity::class.java))
             }
             R.id.buttonMvvm -> {
-                startActivity(Intent(this, MvvmActivity::class.java))
+                startActivity(
+                    Intent(
+                        this,
+                        spm.androidworld.all.mvvmArchitecture.ui.account.MvvmMyAccountActivity::class.java
+                    )
+                )
             }
             R.id.buttonMvvmDatabinding -> {
-                startActivity(Intent(this, MvvmDataBindingActivity::class.java))
+                startActivity(Intent(this, MvvmAccountActivity::class.java))
             }
             R.id.buttonMvi -> {
                 startActivity(Intent(this, MviActivity::class.java))

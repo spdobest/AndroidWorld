@@ -1,33 +1,48 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_container_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:tag="base_fragment">
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/constraintLayoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
     <FrameLayout
-        android:id="@+id/fragment_layout_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            android:id="@+id/fragment_layout_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    <include
+            android:id="@+id/include2"
+            layout="@layout/include_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+            android:id="@+id/include"
+            layout="@layout/include_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/progressbarLoading"
-        android:layout_width="@dimen/dimen_40dp"
-        android:layout_height="@dimen/dimen_40dp"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:background="@drawable/circular_bg"
-        android:padding="@dimen/dimen_5dp"
-        android:visibility="visible" />
+            android:id="@+id/progressbarLoadMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:background="@drawable/circular_bg"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_layout_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible" />
 
 
-    <ProgressBar
-        android:id="@+id/progressbarLoadMore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"
-        android:layout_marginBottom="@dimen/dimen_20dp"
-        android:background="@drawable/circular_bg"
-        android:visibility="gone" />
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

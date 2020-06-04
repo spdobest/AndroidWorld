@@ -26,20 +26,21 @@
     </group>
 
     <group
-        android:id="@+id/leftmenu_group2"
-        android:checkableBehavior="single">
+            android:id="@+id/leftmenu_group2"
+            android:checkableBehavior="single">
 
+        l
         <item
-            android:id="@+id/menuleft_acessories"
-            android:icon="@drawable/ic_camera"
-            android:title="@string/extra_menu_item" />
+                android:id="@+id/menuleft_acessories"
+                android:icon="@drawable/ic_camera"
+                android:title="@string/extra_menu_item" />
         <item
-            android:id="@+id/menuleft_appliences"
-            android:icon="@drawable/ic_camera"
-            android:title="@string/extra_menu_item" />
+                android:id="@+id/menuleft_appliences"
+                android:icon="@drawable/ic_camera"
+                android:title="@string/extra_menu_item" />
         <item
-            android:id="@+id/menuleft_other"
-            android:icon="@drawable/ic_camera"
+                android:id="@+id/menuleft_other"
+                android:icon="@drawable/ic_camera"
             android:title="@string/extra_menu_item" />
     </group>
 

@@ -279,6 +279,16 @@ class CommonUtils {
     }
 
     companion object {
+
+        // CHECK EMAIL ID VALIDATION
+        fun isValidEmail(target: String): Boolean {
+            return if (target == null) {
+                false
+            } else {
+                Patterns.EMAIL_ADDRESS.matcher(target).matches()
+            }
+        }
+
         fun isInternetAvailable(ctx: Context?): Boolean {
             var isConnected = false
             var connectivityManager: ConnectivityManager? = null

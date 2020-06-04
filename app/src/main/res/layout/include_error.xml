@@ -8,7 +8,6 @@
     android:layout_margin="@dimen/dimen_20dp"
     android:visibility="gone"
     tools:visibility="visible"
-
     >
 
     <androidx.appcompat.widget.AppCompatTextView

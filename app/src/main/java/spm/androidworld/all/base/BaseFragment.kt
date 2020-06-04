@@ -11,6 +11,7 @@ import androidx.annotation.LayoutRes
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_base.*
+import kotlinx.android.synthetic.main.include_progress.*
 import spm.androidworld.all.R
 import spm.androidworld.all.utility.LogUtil
 

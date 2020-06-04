@@ -1,5 +1,4 @@
-package com.android.assignment.base
-
+package spm.androidworld.all.base
 
 /**
  * Created by Sibaprasad Mohanty on 2020-01-14.
