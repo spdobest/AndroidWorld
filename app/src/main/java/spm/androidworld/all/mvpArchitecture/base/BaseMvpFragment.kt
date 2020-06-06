@@ -100,10 +100,6 @@ abstract class BaseMvpFragment<P : BaseMvpPresenter> : Fragment() {
     interface Callback {
         fun onFragmentAttached()
         fun onFragmentDetached(tag: String?)
-        fun showProgress()
-        fun hideProgress()
-        fun showError(error: String)
-        fun showMessage()
     }
 
     interface ToolbarListener {

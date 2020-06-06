@@ -28,8 +28,11 @@ import spm.androidworld.all.utility.ImageUtil
 import spm.androidworld.all.utility.NetworkUtil
 
 
-abstract class BaseMvpActivity<P : BaseMvpPresenter> : AppCompatActivity(),
+abstract class BaseMvpActivity<P : BaseMvpPresenter> : AppCompatActivity(), BaseView,
     BaseMvpFragment.Callback, BaseMvpFragment.ToolbarListener {
+
+
+    override fun getContentView(): View = window.decorView
 
     private var isSecondaryActivity = false
     private var enableToolbarIcons: Boolean = false
@@ -58,6 +61,7 @@ abstract class BaseMvpActivity<P : BaseMvpPresenter> : AppCompatActivity(),
     override fun onFragmentDetached(tag: String?) {
 
     }
+
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -142,9 +146,6 @@ abstract class BaseMvpActivity<P : BaseMvpPresenter> : AppCompatActivity(),
 
     override fun hideProgress() {
 
-    }
-
-    override fun showError(error: String) {
     }
 
     override fun showMessage() {
