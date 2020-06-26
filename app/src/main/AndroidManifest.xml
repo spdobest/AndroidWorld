@@ -25,27 +25,7 @@
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
 
-        <!--
-               Set to true if your app is Standalone, that is, it does not require the handheld
-               app to run.
-        -->
-        <meta-data
-                android:name="com.google.android.wearable.standalone"
-                android:value="true" />
-
-        <activity
-                android:name="spm.androidworld.all.mvvmWithDataBinding.ui.account.MvvmAccountActivity"
-                android:label="@string/title_activity_mvvm_account"
-                android:theme="@style/AppTheme.NoActionBar1">
-
-        </activity>
-        <activity
-                android:name="spm.androidworld.all.mvvmArchitecture.ui.account.MvvmMyAccountActivity"
-                android:label="@string/title_activity_mvvm_account"
-                android:theme="@style/AppTheme.NoActionBar1"></activity>
-
-        <activity android:name=".mvpArchitecture.base.BaseMvpActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".edittextWIdgets.EdittextActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -55,14 +35,6 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".mvvmWithDataBinding.MvvmDataBindingActivity" />
-        <activity android:name="spm.androidworld.all.mvvmWithDataBinding.ui.MvvmActivity" />
-        <activity android:name=".mvpArchitecture.MvpActivity" />
-        <activity android:name=".mviArchitecture.MviActivity" />
-        <activity android:name=".cleanArchitecture.CleanArchitectureActivity" />
-        <activity
-                android:name=".base.use.SecondaryActivity"
-                android:theme="@style/AppTheme.NoActionBar1" />
     </application>
 
 </manifest>
