@@ -4,14 +4,26 @@ import android.content.Context
 import android.os.Handler
 import android.text.Editable
 import android.text.InputType
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.Log
 import androidx.appcompat.widget.AppCompatEditText
 import java.util.*
 
-class AddressSearchWithTypingDelayEdittext constructor(context: Context, attrs: AttributeSet) :
-    AppCompatEditText(context, attrs) {
+class AddressSearchWithTypingDelayEdittext :
+    AppCompatEditText {
+
+    constructor(context: Context?) : super(context)
+
+    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
+
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    )
+
 
     private var onCharTypeListener: OnCharTypeDelayListener? = null
     private var timer: Timer = Timer()
@@ -36,12 +48,18 @@ class AddressSearchWithTypingDelayEdittext constructor(context: Context, attrs: 
                 end: Int,
                 count: Int
             ) {
-                Log.i("TAG", "onTextChanged ")
+                Log.i("TAG", "onTextChanged " + text?.length!!)
             }
 
             override fun afterTextChanged(editable: Editable?) {
-                Log.i("TAG", "afterTextChanged " + editable.toString())
-                if (editable.toString().length >= 2 && isTypedText) {
+                Log.i(
+                    "TAG",
+                    "afterTextChanged " + editable.toString() + "  is empty " + TextUtils.isEmpty(
+                        editable.toString()
+                    ) + " text?.length!! " + text?.length!!
+                )
+
+                if (text?.length!! >= 2 && isTypedText) {
                     handler.removeCallbacksAndMessages(null)
                     handler.postDelayed({
                         editable?.let {
@@ -68,6 +86,7 @@ class AddressSearchWithTypingDelayEdittext constructor(context: Context, attrs: 
     fun AppCompatEditText.setReadOnly(value: Boolean, inputType: Int = InputType.TYPE_NULL) {
         isFocusable = !value
         isFocusableInTouchMode = !value
+        requestFocus()
         this.inputType = inputType
         this.text?.length?.let { this.setSelection(it) }
     }
@@ -79,6 +98,7 @@ class AddressSearchWithTypingDelayEdittext constructor(context: Context, attrs: 
     override fun setText(text: CharSequence?, type: BufferType?) {
         isTypedText = false
         super.setText(text, type)
+        setReadOnly(false)
         text?.length?.let { setSelection(it) }
         Log.i("TAG", "setText $text")
         isTypedText = true

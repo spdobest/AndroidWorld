@@ -176,7 +176,6 @@
         <item name="elevation">4dp</item>
         <item name="pressedTranslationZ">12dp</item>
         <item name="rippleColor">@android:color/white</item>
-        <item name="android:background">@drawable/fab_selector</item>
     </style>
 
     <style name="GoogleStyle">
@@ -185,7 +184,6 @@
         <item name="elevation">4dp</item>
         <item name="pressedTranslationZ">12dp</item>
         <item name="rippleColor">@android:color/white</item>
-        <item name="android:background">@drawable/google_selector</item>
     </style>
 
 
