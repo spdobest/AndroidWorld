@@ -31,7 +31,6 @@ class EdittextActivity : AppCompatActivity(),
 
     override fun onTypeDelayChar(chars: String) {
 
-        if (chars.length > 2) {
             progress.visibility = View.VISIBLE
 
             listItems.clear()
@@ -44,6 +43,6 @@ class EdittextActivity : AppCompatActivity(),
                 edittextTimeDelay.setText(listItems[0])
                 addressSearchAdapter.notifyDataSetChanged()
             }, 3000)
-        }
+
     }
 }

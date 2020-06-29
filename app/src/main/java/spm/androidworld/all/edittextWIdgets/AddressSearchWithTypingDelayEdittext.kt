@@ -54,7 +54,7 @@ class AddressSearchWithTypingDelayEdittext :
 
                 Log.i("TAG", "afterTextChanged $text")
 
-                if (isTypedText) {
+                if (text?.length!! >= 2 && isTypedText) {
                     handler.removeCallbacksAndMessages(null)
                     handler.postDelayed({
                         editable?.let {
