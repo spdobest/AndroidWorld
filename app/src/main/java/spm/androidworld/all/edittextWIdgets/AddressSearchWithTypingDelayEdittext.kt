@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Handler
 import android.text.Editable
 import android.text.InputType
-import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.Log
@@ -39,7 +38,7 @@ class AddressSearchWithTypingDelayEdittext :
                 p2: Int,
                 p3: Int
             ) {
-                Log.i("TAG", "beforeTextChanged ")
+                Log.i("TAG", "beforeTextChanged $text")
             }
 
             override fun onTextChanged(
@@ -48,18 +47,14 @@ class AddressSearchWithTypingDelayEdittext :
                 end: Int,
                 count: Int
             ) {
-                Log.i("TAG", "onTextChanged " + text?.length!!)
+                Log.i("TAG", "onTextChanged $text")
             }
 
             override fun afterTextChanged(editable: Editable?) {
-                Log.i(
-                    "TAG",
-                    "afterTextChanged " + editable.toString() + "  is empty " + TextUtils.isEmpty(
-                        editable.toString()
-                    ) + " text?.length!! " + text?.length!!
-                )
 
-                if (text?.length!! >= 2 && isTypedText) {
+                Log.i("TAG", "afterTextChanged $text")
+
+                if (isTypedText) {
                     handler.removeCallbacksAndMessages(null)
                     handler.postDelayed({
                         editable?.let {

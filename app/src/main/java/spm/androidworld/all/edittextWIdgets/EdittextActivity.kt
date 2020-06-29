@@ -30,17 +30,20 @@ class EdittextActivity : AppCompatActivity(),
     }
 
     override fun onTypeDelayChar(chars: String) {
-        progress.visibility = View.VISIBLE
 
-        listItems.clear()
-        for (i in 1..10) {
-            listItems.add("$chars Search String $i")
+        if (chars.length > 2) {
+            progress.visibility = View.VISIBLE
+
+            listItems.clear()
+            for (i in 1..10) {
+                listItems.add("$chars Search String $i")
+            }
+
+            Handler().postDelayed({
+                progress.visibility = View.GONE
+                edittextTimeDelay.setText(listItems[0])
+                addressSearchAdapter.notifyDataSetChanged()
+            }, 3000)
         }
-
-        Handler().postDelayed({
-            progress.visibility = View.GONE
-            edittextTimeDelay.setText(listItems[0])
-            addressSearchAdapter.notifyDataSetChanged()
-        }, 3000)
     }
 }
