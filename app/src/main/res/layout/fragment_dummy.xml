@@ -1,0 +1,13 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="spm.androidworld.all.autoaddresssearch.DummyFragment">
+
+    <fragment
+            android:id="@+id/autoAddressFragment"
+            android:name="spm.androidworld.all.edittextWIdgets.fragments.AutoAddressSearchFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+</FrameLayout>

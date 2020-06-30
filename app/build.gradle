@@ -175,5 +175,8 @@ dependencies {
     implementation koin.koinViewModel
     // view model
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+    implementation 'androidx.wear:wear:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.0.0"
+    compileOnly 'com.google.android.wearable:wearable:2.5.0'
 }

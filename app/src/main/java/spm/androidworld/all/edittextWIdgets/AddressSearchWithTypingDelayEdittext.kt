@@ -67,6 +67,10 @@ class AddressSearchWithTypingDelayEdittext :
         })
     }
 
+    public fun enableEdittext() {
+        setReadOnly(false)
+    }
+
     fun setResponseText(response: String) {
         Log.i("TAG", "RESPONSE " + response)
         // setReadOnly(false, InputType.TYPE_CLASS_TEXT)

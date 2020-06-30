@@ -2,6 +2,7 @@ package spm.androidworld.all.edittextWIdgets
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,8 +32,10 @@ class EdittextActivity : AppCompatActivity(),
 
     override fun onTypeDelayChar(chars: String) {
 
-            progress.visibility = View.VISIBLE
+        Log.i("TAG onTypeDelayChar", chars)
 
+        if (chars.length >= 2) {
+            progress.visibility = View.VISIBLE
             listItems.clear()
             for (i in 1..10) {
                 listItems.add("$chars Search String $i")
@@ -43,6 +46,8 @@ class EdittextActivity : AppCompatActivity(),
                 edittextTimeDelay.setText(listItems[0])
                 addressSearchAdapter.notifyDataSetChanged()
             }, 3000)
+        } else {
 
+        }
     }
 }

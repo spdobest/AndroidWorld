@@ -33,5 +33,6 @@
     <string name="extra_menu_item">Extra Menu Item</string>
 
     <string name="blankstr"></string>
+    <string name="title_activity_auto_address_search">AutoAddressSearchActivity</string>
 
 </resources>
