@@ -1,4 +1,4 @@
-package spm.androidworld.all.edittextWIdgets
+package spm.androidworld.all.edittextWidgets.addressSearch
 
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +18,9 @@ class AddressSearchAdapter(val listItems: List<String>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddressViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.itemview_search, parent, false)
-        return AddressViewHolder(view)
+        return AddressViewHolder(
+            view
+        )
     }
 
     override fun getItemCount(): Int = if (listItems != null) listItems.size else 0

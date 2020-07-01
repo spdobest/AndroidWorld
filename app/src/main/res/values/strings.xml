@@ -34,5 +34,6 @@
 
     <string name="blankstr"></string>
     <string name="title_activity_auto_address_search">AutoAddressSearchActivity</string>
+    <string name="type_address">Type Address</string>
 
 </resources>

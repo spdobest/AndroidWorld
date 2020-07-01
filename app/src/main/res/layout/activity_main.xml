@@ -9,64 +9,23 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonMvp"
+            android:id="@+id/buttonFragmentWithSearchWidget"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:text="MVP Architecture"
-            app:layout_constraintBottom_toTopOf="@+id/buttonMvvm"
+            android:layout_height="100dp"
+            android:text="Fragment With AutoAddress Widget"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonMvvm"
+            android:id="@+id/buttonFragmentWithoutSearchWidget"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            android:text="MVVM Architecture"
-            app:layout_constraintBottom_toTopOf="@+id/buttonMvvmDatabinding"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            android:text="Fragment With AutoAddress Widget"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonMvp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonMvvmDatabinding"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            android:text="MVVM with Data Binding"
-            app:layout_constraintBottom_toTopOf="@+id/buttonMvi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonMvvm" />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonMvi"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            android:text="MVI Architecture"
-            app:layout_constraintBottom_toTopOf="@+id/buttonClean"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonMvvmDatabinding" />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonClean"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            android:text="Clean Architecture"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonMvi" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonFragmentWithSearchWidget" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

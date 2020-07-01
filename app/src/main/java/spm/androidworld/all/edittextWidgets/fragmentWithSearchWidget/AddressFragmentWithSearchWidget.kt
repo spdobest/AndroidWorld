@@ -1,7 +1,10 @@
-package spm.androidworld.all.edittextWIdgets.fragments
+package spm.androidworld.all.edittextWidgets.fragmentWithSearchWidget
 
 import android.os.Bundle
 import android.os.Handler
+import android.text.Editable
+import android.text.InputType
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,18 +15,16 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_autoaddresssearch.*
+import kotlinx.android.synthetic.main.fragment_address_with_searchwidget.*
 import spm.androidworld.all.R
-import spm.androidworld.all.edittextWIdgets.AddressSearchWithTypingDelayEdittext
 
-class AutoAddressSearchFragment : Fragment(),
-    AddressSearchWithTypingDelayEdittext.OnCharTypeDelayListener, AddressSelectListener {
+class AddressFragmentWithSearchWidget : Fragment(), AddressSelectListener {
 
     var count = 0
-    private lateinit var exactAddressSelected: ExactAddressSelectListener
     private var listItems = ArrayList<String>()
     private lateinit var addressSearchAdapter: AutoAddressSearchAdapter
-
+    private var isTypedText: Boolean = true
+    private val DELAY: Long = 1000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -33,37 +34,81 @@ class AutoAddressSearchFragment : Fragment(),
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_autoaddresssearch, container, false)
+        return inflater.inflate(R.layout.fragment_address_with_searchwidget, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        init()
+        setUpAddressListAdapter()
+        initializeSearchView()
+
     }
 
-    fun init() {
-        edittextSearchTimeDelay.setListener(this)
-        addressSearchAdapter = AutoAddressSearchAdapter(listItems, this)
-        recyclerViewAddress.layoutManager =
+    fun setUpAddressListAdapter() {
+        addressSearchAdapter =
+            AutoAddressSearchAdapter(listItems, this)
+        recyclerViewSearchedAddress1.layoutManager =
             LinearLayoutManager(activity as FragmentActivity, LinearLayoutManager.VERTICAL, false)
-        recyclerViewAddress.adapter = addressSearchAdapter
-        addressSearchAdapter.setDevider(recyclerViewAddress)
+        recyclerViewSearchedAddress1.adapter = addressSearchAdapter
+        addressSearchAdapter.setDevider(recyclerViewSearchedAddress1)
     }
 
-    override fun onTypeDelayChar(chars: String) {
-        if (chars.length >= 2) {
-            progressAddress.visibility = View.VISIBLE
+    fun initializeSearchView() {
+        val handler = Handler()
+        edittextTypingDelay1.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(
+                charSequesnce: CharSequence?,
+                p1: Int,
+                p2: Int,
+                p3: Int
+            ) {
+
+            }
+
+            override fun onTextChanged(
+                charSequesnce: CharSequence?,
+                start: Int,
+                end: Int,
+                count: Int
+            ) {
+            }
+
+            override fun afterTextChanged(editable: Editable?) {
+                if (edittextTypingDelay1.text?.length!! >= 2 && isTypedText) {
+                    handler.removeCallbacks(null)
+                    handler.postDelayed(Runnable {
+                        editable?.let {
+                            callAddressSearchApi(editable.toString())
+                            setReadOnly(true)
+                        }
+                    }, DELAY)
+                }
+            }
+        })
+    }
+
+    fun callAddressSearchApi(searchedKey: String) {
+        if (searchedKey.length >= 2) {
+            progressAddress1.visibility = View.VISIBLE
             listItems.clear()
             for (i in 1..10) {
-                listItems.add("$chars Address $i")
+                listItems.add("$searchedKey Address $i")
             }
 
             Handler().postDelayed({
-                progressAddress.visibility = View.GONE
+                progressAddress1.visibility = View.GONE
                 addressSearchAdapter.notifyDataSetChanged()
-                edittextSearchTimeDelay.enableEdittext()
+                setReadOnly(false)
             }, 3000)
         }
+    }
+
+    fun setReadOnly(value: Boolean, inputType: Int = InputType.TYPE_NULL) {
+        edittextTypingDelay1.isFocusable = !value
+        edittextTypingDelay1.isFocusableInTouchMode = !value
+        edittextTypingDelay1.requestFocus()
+        edittextTypingDelay1.inputType = inputType
+        edittextTypingDelay1.text?.length?.let { edittextTypingDelay1.setSelection(it) }
     }
 
     override fun onAddressSelect(item: String) {
@@ -72,7 +117,7 @@ class AutoAddressSearchFragment : Fragment(),
             Toast.makeText(activity as FragmentActivity, "Address Selected", Toast.LENGTH_SHORT)
                 .show()
         } else {
-            progressAddress.visibility = View.VISIBLE
+            progressAddress1.visibility = View.VISIBLE
             count++
             listItems.clear()
             var range = if (count <= 3) 5 else 1
@@ -80,16 +125,13 @@ class AutoAddressSearchFragment : Fragment(),
                 listItems.add("Count$count $item $i")
             }
             Handler().postDelayed({
-                progressAddress.visibility = View.GONE
+                progressAddress1.visibility = View.GONE
                 addressSearchAdapter.notifyDataSetChanged()
             }, 3000)
         }
     }
-
-    fun setListener(exactAddressSelected: ExactAddressSelectListener) {
-        this.exactAddressSelected = exactAddressSelected
-    }
 }
+
 
 private class AutoAddressSearchAdapter(
     val listItems: List<String>,
@@ -127,8 +169,4 @@ private class AutoAddressSearchViewHolder(view: View) : RecyclerView.ViewHolder(
 
 private interface AddressSelectListener {
     fun onAddressSelect(item: String)
-}
-
-public interface ExactAddressSelectListener {
-    fun onExactAddressSeleted(item: String)
 }

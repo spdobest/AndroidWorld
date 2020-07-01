@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_10dp">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <spm.androidworld.all.edittextWidgets.AddressSearchWithTypingDelayEdittext
+                android:id="@+id/edittextTypingDelay1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50dp"
+                android:background="@drawable/drawable_oneside_top_rounded_boarder"
+                android:hint="@string/type_address"
+                android:padding="@dimen/dimen_5dp"
+                android:textColor="@color/blue"
+                android:textCursorDrawable="@null" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSearchedAddress1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_2dp"
+                android:background="@drawable/drawable_oneside_bottom_rounded_boarder"
+                android:padding="@dimen/dimen_10dp" />
+
+    </LinearLayout>
+
+    <ProgressBar
+            android:id="@+id/progressAddress1"
+            android:layout_width="@dimen/dimen_100dp"
+            android:layout_height="@dimen/dimen_100dp"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+</FrameLayout>
