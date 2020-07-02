@@ -1,0 +1,13 @@
+{
+ "autoAddress": {
+  "addresses": [
+   "11 Main Street, Blackrock, Co. Dublin",
+   "11 Main Street, Blennerville, Tralee, Co. Kerry"
+   "11 Main Street, Blackrock, Co. Dublin1",
+    "11 Main Street, Blackrock, Co. Dublin2"
+  ],
+  "status": "Success"
+ },
+ "statusCode": "0",
+ "statusMessage": "Success"
+}

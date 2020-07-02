@@ -1,0 +1,31 @@
+{
+ "findAddress": {
+  "addressOptions": [
+   {
+    "displayName": "Hume House, 128_138 Pembroke Road, Ballsbridge, Dublin 4",
+    "searchName": "Hume House, 128_138 Pembroke Road, Ballsbridge, Dublin 4",
+    "id": 1700014149
+   },
+   {
+    "displayName": "AIB, Hume House, 128_138 Pembroke Road, Ballsbridge, Dublin 4",
+    "searchName": "Hume House, 128_138 Pembroke Road, Ballsbridge, Dublin 4",
+    "id": 1900182313
+   },
+   {
+    "displayName": "BANK OF IRELAND SECURITY OPERATIONS, Hume House, 128_138 Pembroke Road, Ballsbridge, Dublin 4",
+    "searchName": "Hume House, 128_138 Pembroke Road, Ballsbridge, Dublin 4",
+    "id": 1900182312
+   }
+  ],
+  "addressFound": true,
+  "reformattedAddress": [
+   "Hume House",
+   "128-138 Pembroke Road",
+   "Ballsbridge",
+   "Dublin 4"
+  ],
+  "status": "Success"
+ },
+ "statusCode": "0",
+ "statusMessage": "Success"
+}
