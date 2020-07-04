@@ -1,4 +1,4 @@
-package spm.androidworld.all.edittextWidgets.fragments
+package spm.androidworld.all
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import spm.androidworld.all.R
-import spm.androidworld.all.edittextWidgets.fragmentWithoutSearchWidget.AddressFragmentWithoutSearchWidget
+import spm.androidworld.all.autoAddressSearch.AddressSearchFragment
 
 class SearchContainerFragment : Fragment(),
-    AddressFragmentWithoutSearchWidget.FinalAddressSelectListener {
+    AddressSearchFragment.OnFinalAddressSelectListener {
     private var fragentType: Int = 0
 
     private var FRAGMENTTYPE = "FragmentType"
@@ -44,22 +43,21 @@ class SearchContainerFragment : Fragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val frag = AddressFragmentWithoutSearchWidget.getInstance("asdadas")
-        frag.setListeber(this)
-        childFragmentManager.beginTransaction()
-            .add(R.id.addressContainer, frag, "AddressFragmentWithoutSearchWidget")
-            .addToBackStack("AddressFragmentWithoutSearchWidget")
-            .commit()
+////        val frag = AddressFragmentWithoutSearchWidget.getInstance("asdadas")
+//        val frag = AddressSearchFragment<MyViewModel>()
+//       // frag.setListeber(this)
+//        childFragmentManager.beginTransaction()
+//            .add(R.id.addressContainer, frag, "AddressFragmentWithoutSearchWidget")
+//            .addToBackStack("AddressFragmentWithoutSearchWidget")
+//            .commit()
 
         when (fragentType) {
 
         }
-
     }
 
     override fun onFinalAddressSelect(item: String) {
         Toast.makeText(activity as FragmentActivity, "Address Selected", Toast.LENGTH_SHORT)
             .show()
     }
-
 }

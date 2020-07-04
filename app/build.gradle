@@ -148,35 +148,15 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.2.0-alpha06'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.google.android.material:material:1.2.0-alpha06'
+    implementation libraries.values()
+    implementation ktx.values()
+    implementation extLibraries.values()
+    implementation koin.values()
 
-    /**
-     * RETROFIT 2
-     */
-    implementation extLibraries.retrofit
-    implementation extLibraries.retrofitGsonConverter
-    implementation extLibraries.retrofitRxAdapter
-    implementation extLibraries.okhttp3
-    implementation extLibraries.okhttp3Interceptor
-
-    /**
-     * KOIN
-     */
-    implementation koin.koinCore
-    implementation koin.koinExt
-    implementation koin.koinJava
-    implementation koin.koinAndroid
-    implementation koin.koinScope
-    implementation koin.koinViewModel
+    implementation lifecycle.values()
     // view model
-    implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation 'androidx.wear:wear:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.0.0"
-    compileOnly 'com.google.android.wearable:wearable:2.5.0'
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.2.0"
 }

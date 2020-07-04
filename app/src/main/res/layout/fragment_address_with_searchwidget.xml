@@ -10,8 +10,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <spm.androidworld.all.edittextWidgets.AddressSearchWithTypingDelayEdittext
-                android:id="@+id/edittextTypingDelay1"
+        <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittextSearch"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_50dp"
                 android:background="@drawable/drawable_oneside_top_rounded_boarder"
@@ -21,7 +21,7 @@
                 android:textCursorDrawable="@null" />
 
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewSearchedAddress1"
+                android:id="@+id/recyclerViewAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_2dp"
@@ -31,7 +31,7 @@
     </LinearLayout>
 
     <ProgressBar
-            android:id="@+id/progressAddress1"
+            android:id="@+id/progressAddrs1"
             android:layout_width="@dimen/dimen_100dp"
             android:layout_height="@dimen/dimen_100dp"
             android:layout_gravity="center"

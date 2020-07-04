@@ -1,4 +1,4 @@
-package spm.androidworld.all.edittextWidgets
+package spm.androidworld.all.customwidget
 
 import android.content.Context
 import android.os.Handler

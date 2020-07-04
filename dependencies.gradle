@@ -12,8 +12,8 @@
     gsonVersion = "2.8.5"
     rxKotlinVersion = "2.3.0"
     rxAndroidVersion = "2.1.0"
-    retrofitVersion = "2.4.0"
-    okHttp3Version = "3.11.0"
+    retrofitVersion = "2.7.0"
+    okHttp3Version = "4.3.1"
     glideVersion = "4.9.0"
 
     junit4Version = "4.12"
@@ -57,7 +57,8 @@
             // navigation
             navigationFragmentKtx: "androidx.navigation:navigation-fragment-ktx:$nav_version",
             navigationUiKtx      : "androidx.navigation:navigation-ui-ktx:$nav_version",
-            viewpager2           : 'androidx.viewpager2:viewpager2:1.0.0'
+            viewpager2           : 'androidx.viewpager2:viewpager2:1.0.0',
+            cardView           : 'androidx.cardview:cardview:1.0.0'
     ]
 
      // https://developer.android.com/kotlin/ktx
@@ -71,6 +72,7 @@
      ]
 
      extLibraries = [
+
              glide                : "com.github.bumptech.glide:glide:" + glideVersion,
              retrofit             : "com.squareup.retrofit2:retrofit:" + retrofitVersion,
              retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:" + retrofitVersion,
@@ -79,15 +81,17 @@
              okhttp3Interceptor   : "com.squareup.okhttp3:logging-interceptor:" + okHttp3Version,
              circularImage        : "de.hdodenhof:circleimageview:2.1.0",
              gson                 : "com.google.code.gson:gson:" + gsonVersion,
-             supernovaOlder       : "hani.momanii.supernova_emoji_library:supernova-emoji-library:0.0.2",
-             dagger               : "com.google.dagger:dagger-android:$dagger_version",
-             daggerSupport        : "com.google.dagger:dagger-android-support:$dagger_version",
-             daggerProcessor      : "com.google.dagger:dagger-android-processor:$dagger_version", // annotationProcessor
              //picaso
              picasso              : "com.squareup.picasso:picasso:"+picasso_version
      ]
 
-    // "com.github.hani-momanii:SuperNova-Emoji:1.1"
+     /**
+      *              dagger               : "com.google.dagger:dagger-android:$dagger_version",
+      *              daggerSupport        : "com.google.dagger:dagger-android-support:$dagger_version",
+      *              daggerProcessor      : "com.google.dagger:dagger-android-processor:$dagger_version", // annotationProcessor
+      */
+
+     // "com.github.hani-momanii:SuperNova-Emoji:1.1"
 
     navigation = [
             runtime : "androidx.navigation:navigation-runtime:$nav_version",
@@ -141,17 +145,22 @@
     ]
 
     lifeCycleLibs = [
-            lifecycleExtension :  "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
-            viewmodel : "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version",
-            liveDataNew :  "androidx.lifecycle:lifecycle-livedata:$lifecycle_version",
             lifecycleAnnotation : "androidx.lifecycle:lifecycle-compiler:$lifecycle_version", // annotationProcessor
             lifecycleJava8 :  "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version",
             runtime :  "androidx.lifecycle:lifecycle-runtime:$lifecycle_version",
-            pagingRuntime :  "androidx.paging:paging-runtime:$paging_version", // For Kotlin use paging-runtime-ktx
             // alternatively - without Android dependencies for testing
-            pagingCommon : "androidx.paging:paging-common:$paging_version", // testImplementationFor Kotlin use paging-common-ktx
             // optional - RxJava support
-            pagingRxJava2 : "androidx.paging:paging-rxjava2:$paging_version" // For Kotlin use paging-rxjava2-ktx
+     ]
+
+     lifecycle = [
+             //LifeCycle
+             lifecycle_common :"androidx.lifecycle:lifecycle-common:2.2.0",
+             lifecycle_runtime : "androidx.lifecycle:lifecycle-runtime:2.2.0",
+             lifecycle_extensions : "android.arch.lifecycle:extensions:2.2.0",
+             livedata_ktx : "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0",
+             lifecycle_viewmodel : "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version",
+             liveDataNew :  "androidx.lifecycle:lifecycle-livedata:$lifecycle_version",
+             lifecycleExtension :  "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
      ]
 
      kaptLibraries = [
