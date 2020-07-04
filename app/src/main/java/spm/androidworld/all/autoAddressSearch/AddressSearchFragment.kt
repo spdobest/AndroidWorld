@@ -8,7 +8,6 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -29,6 +28,7 @@ class AddressSearchFragment : Fragment(), AddressSelectListener {
         AddressSearchViewModel()
     }
 
+    private lateinit var onFinalAddressSelectListener: OnFinalAddressSelectListener
     private var isTypedText: Boolean = true
     private val DELAY: Long = 1000
     private lateinit var addressAdaoter: AddressAdapter
@@ -76,6 +76,10 @@ class AddressSearchFragment : Fragment(), AddressSelectListener {
         })
     }
 
+    fun setOnFinalAddressSelectListener(onFinalAddressSelectListener: OnFinalAddressSelectListener) {
+        this.onFinalAddressSelectListener = onFinalAddressSelectListener
+    }
+
     fun autoPopulateAddress(tag: String) {
         searchViewmodel.autoPopulateAddress1(tag).observe(this, Observer {
             it?.let { resource ->
@@ -111,11 +115,7 @@ class AddressSearchFragment : Fragment(), AddressSelectListener {
                             progressAddrs1.visibility = View.GONE
 
                             if (it.data.addressFound) {
-                                Toast.makeText(
-                                    activity as FragmentActivity,
-                                    "Address Found",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                                onFinalAddressSelectListener.onFinalAddressSelect("Address Found ${it.data.addressOptions[0]}")
                             } else {
                                 listItems.clear()
                                 for (item in it.data.addressOptions) {

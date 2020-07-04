@@ -54,10 +54,14 @@ class SearchContainerFragment : Fragment(),
         when (fragentType) {
 
         }
+
+        val addressSearchFragment: AddressSearchFragment =
+            childFragmentManager.findFragmentById(R.id.fragmentWithSearchWidget) as AddressSearchFragment
+        addressSearchFragment.setOnFinalAddressSelectListener(this)
     }
 
-    override fun onFinalAddressSelect(item: String) {
-        Toast.makeText(activity as FragmentActivity, "Address Selected", Toast.LENGTH_SHORT)
+    override fun onFinalAddressSelect(selectedAddress: String) {
+        Toast.makeText(activity as FragmentActivity, selectedAddress, Toast.LENGTH_SHORT)
             .show()
     }
 }
