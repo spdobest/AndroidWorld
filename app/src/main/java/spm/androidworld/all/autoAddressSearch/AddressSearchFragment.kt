@@ -20,13 +20,11 @@ import org.koin.core.context.unloadKoinModules
 import spm.androidworld.all.R
 import spm.androidworld.all.autoAddressSearch.model.Status
 import spm.androidworld.all.autoAddressSearch.module.addressSearchModule
-import spm.androidworld.all.autoAddressSearch.viewmodel.AddressSearchViewModel
+import spm.androidworld.all.autoAddressSearch.viewmodel.BaseAddressSearchViewModel
 
 class AddressSearchFragment : Fragment(), AddressSelectListener {
 
-    private val searchViewmodel: AddressSearchViewModel by lazy {
-        AddressSearchViewModel()
-    }
+    private lateinit var addressSearchViewModel: BaseAddressSearchViewModel
 
     private lateinit var onFinalAddressSelectListener: OnFinalAddressSelectListener
     private var isTypedText: Boolean = true
@@ -58,22 +56,10 @@ class AddressSearchFragment : Fragment(), AddressSelectListener {
         super.onViewCreated(view, savedInstanceState)
         setUpAddressListAdapter()
         initializeSearchView()
+    }
 
-        searchViewmodel.getFindAddressResult().observe(viewLifecycleOwner, Observer {
-            progressAddrs1.visibility = View.GONE
-            listItems.clear()
-            listItems.addAll(it)
-            addressAdaoter.notifyDataSetChanged()
-            setReadOnly(false)
-        })
-
-        searchViewmodel.getAutopopulateAddressResult().observe(viewLifecycleOwner, Observer {
-            progressAddrs1.visibility = View.GONE
-            listItems.clear()
-            listItems.addAll(it)
-            addressAdaoter.notifyDataSetChanged()
-            setReadOnly(false)
-        })
+    fun setAddressSearchViewModel(addressSearchViewmodel: BaseAddressSearchViewModel) {
+        this.addressSearchViewModel = addressSearchViewmodel
     }
 
     fun setOnFinalAddressSelectListener(onFinalAddressSelectListener: OnFinalAddressSelectListener) {
@@ -81,7 +67,7 @@ class AddressSearchFragment : Fragment(), AddressSelectListener {
     }
 
     fun autoPopulateAddress(tag: String) {
-        searchViewmodel.autoPopulateAddress1(tag).observe(this, Observer {
+        addressSearchViewModel.getAutoPopulateAddressSuggestions(tag).observe(this, Observer {
             it?.let { resource ->
                 when (resource.status) {
                     Status.SUCCESS -> {
@@ -106,7 +92,7 @@ class AddressSearchFragment : Fragment(), AddressSelectListener {
     }
 
     fun findAddress(tag: String) {
-        searchViewmodel.findAddressNew(tag).observe(this, Observer {
+        addressSearchViewModel.findAddressData(tag).observe(this, Observer {
             it?.let { resource ->
                 when (resource.status) {
                     Status.SUCCESS -> {

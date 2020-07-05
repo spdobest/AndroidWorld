@@ -1,50 +1,69 @@
 package spm.androidworld.all.autoAddressSearch.viewmodel
 
-import android.os.Handler
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
+import kotlinx.coroutines.Dispatchers
+import spm.androidworld.all.autoAddressSearch.model.*
 
 
 abstract class BaseAddressSearchViewModel : ViewModel() {
 
-    var count = 0
+    var apiCount: Int = 0
 
-    private var observablePopulateAddress = MutableLiveData<List<String>>()
+    open fun getAutoPopulateAddressSuggestions(tag: String) = liveData(Dispatchers.IO) {
 
-    fun getAutopopulateAddressResult() = observablePopulateAddress
-    fun getFindAddressResult() = observableFindAddress
+        apiCount = 0
+        emit(Resource.loading(data = null))
+        try {
+            val list = ArrayList<String>()
+            for (i in 1..5) {
+                list.add("$tag Item $i")
+            }
+            val data = AutoPopulateAddressData(list, "Success")
 
-    fun publicAutopopulateAddressResult(data: List<String>) {
-        observablePopulateAddress.value = data
-    }
+            var res: AutoPopulateAddressResponse? = null
 
-    private var observableFindAddress = MutableLiveData<List<String>>()
 
-    fun publicFindAddressResult(list: List<String>) {
-        observableFindAddress.value = list
-    }
+            res = AutoPopulateAddressResponse(data, "Success", "success", "success")
 
-    open fun autoPopulateAddress(searchTag: String) {
 
-        var resultList = ArrayList<String>()
-
-        for (i in 1..5) {
-            resultList.add("Count$count $searchTag $i")
+            emit(Resource.success(res))
+            // emit(Resource.success(data = repository.autoCompleteAddress(tag)))
+        } catch (exception: Exception) {
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
         }
-        Handler().postDelayed({
-            publicAutopopulateAddressResult(resultList)
-        }, 3000)
     }
 
-    open fun findAddress(searchTag: String) {
-        var resultList = ArrayList<String>()
-        count++
-        var range = if (count <= 3) 5 else 1
-        for (i in 1..range) {
-            resultList.add("Count$count $searchTag $i")
+    open fun findAddressData(tag: String) = liveData(Dispatchers.IO) {
+        emit(Resource.loading(data = null))
+
+        apiCount++
+
+        try {
+            val list = ArrayList<AddressOption>()
+
+            if (apiCount >= 3) {
+                list.add(AddressOption("$tag Item 0", 123, tag))
+            } else {
+                for (i in 1..5) {
+                    list.add(AddressOption("$tag Item $i", 123, tag))
+                }
+            }
+
+            val data = FindAddressData((apiCount >= 3), list, tag, "")
+
+            var res: FindAddressResponse? = null
+
+            /*Handler().postDelayed(kotlinx.coroutines.Runnable {
+
+            }, 1000)*/
+            res = FindAddressResponse(data, "Success", "success", "success")
+
+            emit(Resource.success(res))
+
+//            emit(Resource.success(data = repository.findAddress(tag)))
+        } catch (exception: Exception) {
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
         }
-        Handler().postDelayed({
-            publicFindAddressResult(resultList)
-        }, 3000)
     }
 }
