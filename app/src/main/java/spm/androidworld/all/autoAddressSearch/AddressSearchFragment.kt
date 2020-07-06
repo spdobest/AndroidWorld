@@ -156,10 +156,16 @@ class AddressSearchFragment : Fragment(), AddressSelectListener {
                     handler.removeCallbacks(null)
                     handler.postDelayed(Runnable {
                         editable?.let {
-                            progressAddrs1.visibility = View.VISIBLE
                             // API call
-                            autoPopulateAddress(editable.toString())
-                            setReadOnly(true)
+                            val searchTag = editable.toString()
+                            if (searchTag.length > 2) {
+                                progressAddrs1.visibility = View.VISIBLE
+                                setReadOnly(true)
+                                // showing progress for 1 second - in place of network call
+                                Handler().postDelayed(Runnable {
+                                    autoPopulateAddress(searchTag)
+                                }, 2000)
+                            }
 
                         }
                     }, DELAY)
