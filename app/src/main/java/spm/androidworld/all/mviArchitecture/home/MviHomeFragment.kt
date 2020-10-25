@@ -1,4 +1,4 @@
-package spm.androidworld.all.mviArchitecture
+package spm.androidworld.all.mviArchitecture.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

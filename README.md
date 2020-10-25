@@ -289,7 +289,10 @@ AsyncTask is now safe to be used in a ViewModel!
 ## Advantage of MVI
 - Multiple inputs: In MVP and MVVM, the Presenter and the ViewModel often end up with a large number of inputs and outputs to manage. This is problematic in big apps with many background tasks.
 - Multiple states: In MVP and MVVM, the business logic and the Views may have different states at any point. Developers often synchronize the state with Observable and Observer callbacks, but this may lead to conflicting behavior.
-- To solve the above issue, in MVI , the **Model** represents state rather than data.
+- In MVVM, there are lots of ready made observable variables to observe the state of the view
+- Like loading, loadmore, error, firsttime load etc. There are lots of observable methods in the view. we can avoid this by using state in MVI 
+To solve the above issue, in MVI , the **Model** represents state rather than data.
+- 
 
 
 

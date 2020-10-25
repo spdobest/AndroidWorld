@@ -1,4 +1,4 @@
-package spm.androidworld.all.Dto
+package spm.androidworld.all.dto
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

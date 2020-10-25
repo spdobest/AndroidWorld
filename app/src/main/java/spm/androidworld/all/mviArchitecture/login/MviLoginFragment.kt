@@ -1,9 +1,8 @@
-package spm.androidworld.all.mviArchitecture
+package spm.androidworld.all.mviArchitecture.login
 
 
 /**
  * Created by Sibaprasad Mohanty on 19/05/20.
- * Spm Limited
  * sp.dobest@gmail.com
  */
 import android.os.Bundle
@@ -11,13 +10,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import spm.androidworld.all.R
 
-
-/**
- * A simple [Fragment] subclass.
- */
 class MviLoginFragment : Fragment() {
+
+    private lateinit var viewModel: LoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,15 +25,11 @@ class MviLoginFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
+        viewModel =
+            ViewModelProviders.of(activity!!).get(LoginViewModel::class.java)
     }
 }

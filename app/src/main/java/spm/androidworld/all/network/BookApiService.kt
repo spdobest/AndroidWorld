@@ -4,7 +4,7 @@ import io.reactivex.Observable
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
-import spm.androidworld.all.Dto.BooksResponse
+import spm.androidworld.all.dto.BooksResponse
 
 
 interface BookApiService {
