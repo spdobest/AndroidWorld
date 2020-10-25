@@ -273,7 +273,8 @@ AsyncTask is now safe to be used in a ViewModel!
 ## MVI (Model-ViewIntent)
 - Important Links
     - http://hannesdorfmann.com/android/mosby3-mvi-1
-    -
+    - https://medium.com/@abhiappmobiledeveloper/android-mvi-reactive-architecture-pattern-74e5f1300a87
+    - WHat is the main intention to develop MVI pattern **https://www.youtube.com/watch?v=1zj7M1LnJV4&feature=youtu.be**
 - MVI uses reactive programming to build Android apps.
 - Here are the details use of each module in MVI.
 - Models in MVI represent a state of an app.
@@ -287,12 +288,9 @@ AsyncTask is now safe to be used in a ViewModel!
     - Intent represents an intention or a desire to perform an action, either by the user or the app itself. For every action, a View receives an Intent. The Presenter observes the Intent, and Models translate it into a new state.
 
 ## Advantage of MVI
-- Multiple inputs: In MVP and MVVM, the Presenter and the ViewModel often end up with a large number of inputs and outputs to manage. This is problematic in big apps with many background tasks.
-- Multiple states: In MVP and MVVM, the business logic and the Views may have different states at any point. Developers often synchronize the state with Observable and Observer callbacks, but this may lead to conflicting behavior.
-- In MVVM, there are lots of ready made observable variables to observe the state of the view
-- Like loading, loadmore, error, firsttime load etc. There are lots of observable methods in the view. we can avoid this by using state in MVI 
-To solve the above issue, in MVI , the **Model** represents state rather than data.
-- 
+- **Multiple inputs:** In MVP and MVVM, the Presenter and the ViewModel often end up with a large number of inputs and outputs to manage. This is problematic in big apps with many background tasks.
+- **Multiple states:** In MVP and MVVM, the business logic and the Views may have different states at any point. Developers often synchronize the state with Observable and Observer callbacks, but this may lead to conflicting behavior.
+- To solve the above issue, in MVI , the **Model** represents state rather than data.
 
 
 
