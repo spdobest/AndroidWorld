@@ -6,12 +6,10 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.biometric.BiometricPrompt
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_biometric_auth.*
 import spm.androidworld.all.R
 import java.util.concurrent.Executors
 
@@ -30,7 +28,7 @@ class BiometricAuthActivity : AppCompatActivity() {
 
         val executor = Executors.newSingleThreadExecutor()
         val activity: FragmentActivity = this // reference to activity
-        val biometricPrompt = BiometricPrompt(activity, executor, object : BiometricPrompt.AuthenticationCallback() {
+       /* val biometricPrompt = BiometricPrompt(activity, executor, object : BiometricPrompt.AuthenticationCallback() {
 
             override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
                 super.onAuthenticationError(errorCode, errString)
@@ -43,9 +41,14 @@ class BiometricAuthActivity : AppCompatActivity() {
 
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                 super.onAuthenticationSucceeded(result)
-                /**
-                 * "Called when a biometric is recognized."
-                 */
+                */
+        /**
+         * "Called when a biometric is recognized."
+         *//*
+                */
+        /**
+         * "Called when a biometric is recognized."
+         *//*
                 showSnackBarError("Biometric Matched")
             }
 
@@ -54,9 +57,9 @@ class BiometricAuthActivity : AppCompatActivity() {
                 super.onAuthenticationFailed()
                 //"Called when a biometric is valid but not recognized.")
             }
-        })
+        })*/
 
-        val promptInfo = BiometricPrompt.PromptInfo.Builder()
+        /*val promptInfo = BiometricPrompt.PromptInfo.Builder()
             .setTitle("Set the title to display.")
             .setSubtitle("Set the subtitle to display.")
             .setDescription("Set the description to display")
@@ -67,7 +70,7 @@ class BiometricAuthActivity : AppCompatActivity() {
             if (isBiometricSupported()) {
                 biometricPrompt.authenticate(promptInfo)
             }
-        }
+        }*/
 
 
     }
