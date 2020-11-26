@@ -6,7 +6,6 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-
     <dist:module dist:instant="true" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,6 +14,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+            android:name=".AndroidWorldApplication"
             android:allowBackup="false"
             android:debuggable="true"
             android:icon="@mipmap/ic_launcher"
@@ -24,7 +24,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
-
+        <!--        MVI architecture-->
+        <activity android:name=".mviArchitecture.MviMainActivity" />
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
@@ -34,29 +35,24 @@
                 android:value="true" />
 
         <activity
-                android:name="spm.androidworld.all.mvvmWithDataBinding.ui.account.MvvmAccountActivity"
+                android:name=".mvvmWithDataBinding.ui.account.MvvmAccountActivity"
                 android:label="@string/title_activity_mvvm_account"
-                android:theme="@style/AppTheme.NoActionBar1">
-
-        </activity>
+                android:theme="@style/AppTheme.NoActionBar1" />
         <activity
-                android:name="spm.androidworld.all.mvvmArchitecture.ui.account.MvvmMyAccountActivity"
+                android:name=".mvvmArchitecture.ui.account.MvvmMyAccountActivity"
                 android:label="@string/title_activity_mvvm_account"
-                android:theme="@style/AppTheme.NoActionBar1"></activity>
-
+                android:theme="@style/AppTheme.NoActionBar1" />
         <activity android:name=".mvpArchitecture.base.BaseMvpActivity" />
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".mvvmWithDataBinding.MvvmDataBindingActivity" />
-        <activity android:name="spm.androidworld.all.mvvmWithDataBinding.ui.MvvmActivity" />
+        <activity android:name=".mvvmWithDataBinding.ui.MvvmActivity" />
         <activity android:name=".mvpArchitecture.MvpActivity" />
         <activity android:name=".mviArchitecture.MviActivity" />
         <activity android:name=".cleanArchitecture.CleanArchitectureActivity" />

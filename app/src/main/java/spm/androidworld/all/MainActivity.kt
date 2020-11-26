@@ -6,7 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import spm.androidworld.all.cleanArchitecture.CleanArchitectureActivity
-import spm.androidworld.all.mviArchitecture.MviActivity
+import spm.androidworld.all.mviArchitecture.MviMainActivity
 import spm.androidworld.all.mvpArchitecture.MvpActivity
 import spm.androidworld.all.mvvmWithDataBinding.ui.account.MvvmAccountActivity
 
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(Intent(this, MvvmAccountActivity::class.java))
             }
             R.id.buttonMvi -> {
-                startActivity(Intent(this, MviActivity::class.java))
+                startActivity(Intent(this, MviMainActivity::class.java))
             }
             R.id.buttonClean -> {
                 startActivity(Intent(this, CleanArchitectureActivity::class.java))
