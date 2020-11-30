@@ -57,3 +57,38 @@
  </td>
 </tr>
 </table> 
+
+- You can have different built types like thie
+```
+android {
+ compileSdkVersion 20
+ buildToolsVersion "20.0.2"
+ flavourDimensions "version" , "abi"
+ productFlavours {
+      free{
+          flavourDimension "version"
+      }
+      paid{
+          flavourDimension "version"
+      }
+      arm{
+          flavourDimension "abi"
+      }
+      x86{
+          flavourDimension "abi"
+      }
+ }
+
+```
+- To achieve same thing in ant build system, it requires 300 lines of xml code
+- To do the same task in Maven its require to create 4 sub module for this, which is very complex
+## Different gradle files in android project
+- **settings.gradle** - The settings.gradle file, located in the root project directory, tells Gradle which modules it should include when building your app. For most projects, the file is simple and only includes the following:
+- However, multi-module projects need to specify each module that should go into the final build.
+- **Top level build.gradle**  
+- The top-level build.gradle file, located in the root project directory, defines build configurations that apply to all modules in your project. 
+- By default, the top-level build file uses the buildscript block to define the Gradle repositories and dependencies that are common to all modules in the project. The following code sample describes the default settings and DSL elements you can find in the top-level build.gradle after creating a new project.
+- 
+
+
+
