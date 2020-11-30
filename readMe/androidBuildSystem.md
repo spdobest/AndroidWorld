@@ -37,4 +37,7 @@
 - Check the gradle version if installed in command promt, terminal - **gradle -v or gradle --version**
 - Follow the steps in this site to install gradle **https://gradle.org/install/**
 - Set environment variables
+
+# Android Studio gradle system in Deep 
+- https://www.youtube.com/watch?v=Xw6CKEsWvxo
 - 
