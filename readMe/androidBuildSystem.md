@@ -40,4 +40,20 @@
 
 # Android Studio gradle system in Deep 
 - https://www.youtube.com/watch?v=Xw6CKEsWvxo
-- 
+
+<table>
+<tr>
+<td>
+  <img src="https://github.com/spdobest/AndroidWorld/blob/master/readMe/Images/androidBuildSystem3.png" width="500" height="400" /> 
+ </td>
+<td>
+<img src="https://github.com/spdobest/AndroidWorld/blob/master/readMe/Images/androidBuildSystem4.png" width="600" height="400" />
+</td>
+</tr>
+  
+  <tr>
+<td>
+  <img src="https://github.com/spdobest/AndroidWorld/blob/master/readMe/Images/androidBuildSystem2.png" width="800" height="500" /> 
+ </td>
+</tr>
+</table> 
